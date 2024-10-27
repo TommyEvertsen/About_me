@@ -1,0 +1,7 @@
+git add .
+git commit -m ""
+git push origin main
+
+ git subtree push --prefix dist origin gh-pages
+ Change all paths in index.html and 404.html in dist folder to example  <link rel="stylesheet" crossorigin href="/About_me/assets/index-Cqi59c2g.css">
+ 
