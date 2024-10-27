@@ -12,7 +12,7 @@ const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
 
   history: createWebHistory(
-    process.env.NODE_ENV === "production" ? "/Portofolio/" : "/"
+    process.env.NODE_ENV === "production" ? "/About_me/" : "/"
   ),
   routes: [
     {
@@ -72,16 +72,10 @@ const router = createRouter({
       },
     },
     {
-      path: "/Portofolio/",
+      path: "/About_me/",
       redirect: "/",
     },
   ],
-  /*  For deployment
-  {
-    path: "/Portofolio/",
-    redirect: "/",
-  },
-], */
 });
 
 export default router;
