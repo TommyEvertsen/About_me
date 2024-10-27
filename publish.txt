@@ -1,9 +1,9 @@
-git add .
-git commit -m ""
-git push origin main
+git pull i main
 
 uncomment this line in vite.config   /*  base: "/About_me/", */
 npm run build
+git add 
+git commit -m ""
 copy index.html and make 404.html exactly the same
 
 git subtree push --prefix dist origin gh-pages
