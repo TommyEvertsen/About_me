@@ -77,6 +77,7 @@ import portoImage from "@/assets/portofolio.jpg";
 import universe from "@/assets/universe.jpg";
 import fireAndFlesh from "@/assets/images/fire2.jpg";
 import dragon from "@/assets/images/Dragon.jpg";
+import warehouse from "@/assets/warehouse.jpg";
 
 const hobbyProjects = [
   {
@@ -88,6 +89,16 @@ const hobbyProjects = [
     image: dragon,
     link: "https://play.unity.com/en/games/fe0fbeae-9381-4518-83c0-377a728f5a2a/build",
     code: "",
+  },
+  {
+    title: "Tommy's lagersytem",
+    description:
+      "Warehouse management system. Insert items to stands and search for their locations. Made using Laravel and filament.",
+    tech: "Laravel, Filament",
+    published: false,
+    image: warehouse,
+    link: "",
+    code: "https://github.com/TommyEvertsen/Portofolio",
   },
   {
     title: "Fire and flesh",
@@ -111,16 +122,6 @@ const hobbyProjects = [
     code: "https://github.com/TommyEvertsen/Tiny-Productions-Photographer",
   },
   {
-    title: "Astronomy picture of the day",
-    description:
-      "Made with API from NASA to show new pictures everyday of the universe. I would also like to add the mars rover api in the future",
-    tech: "React.Js",
-    published: false,
-    image: universe,
-    link: "",
-    code: "https://github.com/TommyEvertsen/Astronomy-picture-of-the-day-React.js",
-  },
-  {
     title: "Portofolio",
     description:
       "I'm creating a personal portfolio using Vuetify 3. It's been a fun hobby project where I've learned to work with Vuetify.",
@@ -129,6 +130,16 @@ const hobbyProjects = [
     image: portoImage,
     link: "",
     code: "https://github.com/TommyEvertsen/Portofolio",
+  },
+  {
+    title: "Astronomy picture of the day",
+    description:
+      "Made with API from NASA to show new pictures everyday of the universe. I would also like to add the mars rover api in the future",
+    tech: "React.Js",
+    published: false,
+    image: universe,
+    link: "",
+    code: "https://github.com/TommyEvertsen/Astronomy-picture-of-the-day-React.js",
   },
 ];
 </script>

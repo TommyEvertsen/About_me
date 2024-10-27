@@ -1,9 +1,17 @@
 <template>
   <v-divider> </v-divider>
   <v-timeline align="start">
-    <v-timeline-item v-for="(year, i) in years" :key="i" :dot-color="year.color" size="small">
+    <v-timeline-item
+      v-for="(year, i) in years"
+      :key="i"
+      :dot-color="year.color"
+      size="small"
+    >
       <template v-slot:opposite>
-        <div :class="`pt-1 headlineDate font-weight-bold `" v-text="year.year"></div>
+        <div
+          :class="`pt-1 headlineDate font-weight-bold `"
+          v-text="year.year"
+        ></div>
       </template>
       <div>
         <h2 :class="`mt-n1 headlineText font-weight-light mb-4  `">
@@ -63,14 +71,17 @@ const years = [
   {
     color: "#5B8FB9",
     year: "2024",
-    title: "Got a job as Senior software engineer at Geological study of Norway",
+    title:
+      "Got a job as Senior software engineer at Geological survey of Norway",
     text: "Moved to a new city and got an exiting job at a wonderful company",
   },
 ];
 </script>
 
 <style>
-.v-timeline--vertical.v-timeline .v-timeline-item:nth-child(2n) .v-timeline-item__body {
+.v-timeline--vertical.v-timeline
+  .v-timeline-item:nth-child(2n)
+  .v-timeline-item__body {
   text-align: end;
 }
 
@@ -79,6 +90,6 @@ const years = [
 }
 
 .headlineDate {
-  color: #1A237E;
+  color: #1a237e;
 }
 </style>

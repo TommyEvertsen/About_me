@@ -2,6 +2,7 @@ git add .
 git commit -m ""
 git push origin main
 
+uncomment this line in vite.config   /*  base: "/About_me/", */
 npm run build
 copy index.html and make 404.html exactly the same
 
