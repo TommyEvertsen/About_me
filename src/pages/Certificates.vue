@@ -101,8 +101,7 @@
                 <v-card-text class="pb-0 d-flex justify-start ga-2">
                   <v-chip
                     v-for="skill in certificate.skills"
-                    :style="{ backgroundColor: skill.color }"
-                    color="black"
+                    :style="{ backgroundColor: skill.color, color: skill.text }"
                     >{{ skill.title }}
                   </v-chip>
                 </v-card-text>
@@ -135,6 +134,7 @@ import c from "@/assets/c.jpg";
 import udemy from "@/assets/udemy.jpg";
 import duke from "@/assets/images/duke.jpg";
 import ucdavis from "@/assets/images/ucdavis.jpg";
+import apexcertif from "@/assets/apex.jpg";
 
 const certificates = [
   {
@@ -148,10 +148,12 @@ const certificates = [
       {
         title: "Azure",
         color: "#008ad7",
+        text: "#ffffff",
       },
       {
         title: "C#",
         color: "#9f73d9",
+        text: "#ffffff",
       },
     ],
     image: developerAccociate,
@@ -167,9 +169,26 @@ const certificates = [
       {
         title: "Azure",
         color: "#008ad7",
+        text: "#ffffff",
       },
     ],
     image: fundamentals,
+  },
+  {
+    title: "Oracle Application Express Workshop",
+    provider: "Glasspaper",
+    icon: "mdi-alpha-g-box-outline",
+    icon2: "mdi-check",
+    subtitle: "Oracle apex",
+
+    skills: [
+      {
+        title: "Oracle apex",
+        color: "#68845f",
+        text: "#ffffff",
+      },
+    ],
+    image: apexcertif,
   },
   {
     title: "Foundational C# with Microsoft",
@@ -182,6 +201,7 @@ const certificates = [
       {
         title: "C#",
         color: "#9f73d9",
+        text: "#ffffff",
       },
     ],
     image: c,
@@ -228,6 +248,7 @@ const certificates = [
       {
         title: "CSS",
         color: "#214ce5",
+        text: "#ffffff",
       },
     ],
     image: mosh,
@@ -251,6 +272,7 @@ const certificates = [
       {
         title: "CSS",
         color: "#214ce5",
+        text: "#ffffff",
       },
     ],
     image: duke,
@@ -274,6 +296,7 @@ const certificates = [
       {
         title: "CSS",
         color: "#214ce5",
+        text: "#ffffff",
       },
     ],
     image: ucdavis,
