@@ -6,6 +6,7 @@ import Education from "@/pages/Education.vue";
 import Home from "@/pages/Home.vue";
 import Projects from "@/pages/Projects.vue";
 import VideoGames from "@/pages/VideoGames.vue";
+import Blog from "@/pages/Blog.vue";
 import { createRouter, createWebHistory } from "vue-router";
 
 const router = createRouter({
@@ -45,6 +46,14 @@ const router = createRouter({
       component: VideoGames,
       meta: {
         title: "Videogames",
+      },
+    },
+    {
+      path: "/blog",
+      name: "blog",
+      component: Blog,
+      meta: {
+        title: "Blog",
       },
     },
     {

@@ -116,6 +116,12 @@ const navigateToContact = () => {
   });
 };
 
+const navigateToBlog = () => {
+  router.push({ name: "blog" }).then(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+};
+
 const mainlinks = [
   {
     title: "Home",
@@ -141,6 +147,7 @@ const mainlinks = [
     value: "education",
     click: navigateToEducation,
   },
+ 
 ];
 
 const subLinks = [
@@ -155,6 +162,12 @@ const subLinks = [
     icon: "mdi-certificate-outline",
     value: "certificates",
     click: navigateToCertificates,
+  },
+  {
+    title: "Blog",
+    icon: "mdi-head-dots-horizontal-outline",
+    value: "blog",
+    click: navigateToBlog,
   },
 ];
 
