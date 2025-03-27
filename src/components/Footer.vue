@@ -70,6 +70,12 @@ const navigateToContact = () => {
   });
 };
 
+const navigateToBlog = () => {
+  router.push({ name: "blog" }).then(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+};
+
 const links = [
   {
     title: "Home",
@@ -100,6 +106,11 @@ const links = [
     title: "Certificates",
     icon: "mdi-certificate-outline",
     click: navigateToCertificates,
+  },
+  {
+    title: "Blog",
+    icon: "mdi-head-dots-horizontal-outline",
+    click: navigateToBlog,
   },
   {
     title: "Github",
