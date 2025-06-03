@@ -4,10 +4,13 @@
       <v-row>
         <v-col cols="12" xl="5" lg="5" md="12" sm="12" xs="12" class="mt-10">
           <v-sheet class="centerHome">
-            <h3>Hi there i'm</h3>
-            <h1 class="mt-2" style="color: #5b8fb9">Tommy Evertsen</h1>
-            <v-divider length="300" thickness="2"> </v-divider>
-            <h2>Fullstack developer</h2>
+            <h3 class="fade-in">Hi there i'm</h3>
+            <h1 class="mt-2 fade-in-slow" style="color: #5b8fb9">
+              Tommy Evertsen
+            </h1>
+            <v-divider class="fade-in-snail" length="300" thickness="2">
+            </v-divider>
+            <h2 class="fade-in-snail">Senior software engineer</h2>
             <p
               class="mt-10"
               style="font-size: large; line-height: 1, 2rem; text-align: left"
@@ -68,6 +71,10 @@
 
 <script setup>
 import { useRouter } from "vue-router";
+
+import { ref } from "vue";
+const loaded = ref(false);
+
 import tommy from "@/assets/images/tommyMosq.jpg";
 
 const router = useRouter();
@@ -121,6 +128,9 @@ const technologies = [
     title: "Oracle apex",
     color: "#85C1E9 ",
   },
+  {
+    title: "Java",
+  },
 ];
 </script>
 
@@ -128,6 +138,47 @@ const technologies = [
 @media screen and (max-width: 768px) {
   .centerHome {
     text-align: center;
+  }
+}
+
+.fade-in {
+  animation: fadein 2s;
+}
+
+.fade-in-slow {
+  opacity: 0;
+  animation: fadeinslow 1s ease-in 1s forwards;
+}
+
+.fade-in-snail {
+  opacity: 0;
+  animation: fadeinsnail 1s ease-in 2s forwards;
+}
+
+@keyframes fadein {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeinslow {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeinsnail {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }
 </style>
