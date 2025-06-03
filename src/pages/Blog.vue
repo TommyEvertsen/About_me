@@ -23,7 +23,8 @@
           xs="12"
         >
           <v-img
-            class="align-end text-white"
+            :key="currentBlogPost.image"
+            class="align-end text-white fade-in"
             height="900"
             :src="currentBlogPost.image"
             cover
@@ -44,7 +45,7 @@
 </template>
 
 <script setup>
-import { ref, computed } from "vue";
+import { ref, computed, watch } from "vue";
 import creative from "@/assets/creative.jpg";
 import programming from "@/assets/programming.jpg";
 import porks from "@/assets/porks.jpg";
@@ -94,6 +95,10 @@ const blogPosts = [
 
 const page = ref(1);
 
+watch(page, () => {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+});
+
 const currentBlogPost = computed(() => {
   return blogPosts[page.value - 1];
 });
@@ -103,5 +108,46 @@ const currentBlogPost = computed(() => {
 .headline {
   color: #5b8fb9;
   font-weight: bold;
+}
+
+.fade-in {
+  animation: fadein 2s;
+}
+
+.fade-in-slow {
+  opacity: 0;
+  animation: fadeinslow 1s ease-in 1s forwards;
+}
+
+.fade-in-snail {
+  opacity: 0;
+  animation: fadeinsnail 1s ease-in 2s forwards;
+}
+
+@keyframes fadein {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeinslow {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeinsnail {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 </style>
