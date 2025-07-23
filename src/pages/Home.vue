@@ -131,6 +131,9 @@ const technologies = [
   {
     title: "Java",
   },
+  {
+    title: "Typescript",
+  },
 ];
 </script>
 
