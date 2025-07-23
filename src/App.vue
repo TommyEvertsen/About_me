@@ -1,6 +1,6 @@
 <template>
   <v-app>
-    <v-layout>
+    <v-layout class="fullHeight">
       <AppBar />
       <v-main style="background-color: #ffff">
         <RouterView />
@@ -13,6 +13,7 @@
 <script setup>
 import { RouterView } from "vue-router";
 import { useDisplay } from "vuetify";
+import "@/styles/styles.css";
 
 const { mobile } = useDisplay();
 </script>

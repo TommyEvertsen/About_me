@@ -147,7 +147,6 @@ const mainlinks = [
     value: "education",
     click: navigateToEducation,
   },
- 
 ];
 
 const subLinks = [
@@ -162,6 +161,12 @@ const subLinks = [
     icon: "mdi-certificate-outline",
     value: "certificates",
     click: navigateToCertificates,
+  },
+  {
+    title: "Game dev",
+    icon: "mdi-gamepad-variant-outline",
+    value: "Game development",
+    click: navigateToGames,
   },
   {
     title: "Blog",

@@ -129,7 +129,7 @@ const hobbyProjects = [
     published: false,
     image: portoImage,
     link: "",
-    code: "https://github.com/TommyEvertsen/Portofolio",
+    code: "https://github.com/TommyEvertsen/About_me",
   },
   {
     title: "Astronomy picture of the day",

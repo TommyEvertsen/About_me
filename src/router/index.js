@@ -45,7 +45,7 @@ const router = createRouter({
       name: "video-games",
       component: VideoGames,
       meta: {
-        title: "Videogames",
+        title: "Game development",
       },
     },
     {
