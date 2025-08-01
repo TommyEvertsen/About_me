@@ -9,3 +9,9 @@
 .introText {
   font-size: large;
 }
+
+@media (min-width: 2560px) {
+  .v-container {
+    max-width: 2200px !important;
+  }
+}
