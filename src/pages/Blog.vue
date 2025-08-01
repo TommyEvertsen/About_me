@@ -1,7 +1,16 @@
 <template>
   <main>
     <v-container class="px-10 mt-10 mb-10">
-      <v-row> <h1 class="headline">Welcome to my blog</h1></v-row>
+      <v-row>
+        <h1
+          class=""
+          :style="{
+            color: $vuetify.theme.current.colors.secondaryText,
+          }"
+        >
+          Welcome to my blog
+        </h1></v-row
+      >
       <v-row>
         <v-col class="pa-2" cols="12" xl="6" lg="6" md="12" sm="12" xs="12">
           <div v-if="currentBlogPost" class="mt-10">
@@ -105,11 +114,6 @@ const currentBlogPost = computed(() => {
 </script>
 
 <style>
-.headline {
-  color: #5b8fb9;
-  font-weight: bold;
-}
-
 .fade-in {
   animation: fadein 2s;
 }

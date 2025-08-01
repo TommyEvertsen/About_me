@@ -1,7 +1,10 @@
 <template>
   <v-footer
     class="footer text-center d-flex flex-column"
-    style="background-color: #f8f9f9; color: black"
+    :style="{
+      backgroundColor: $vuetify.theme.current.colors.footerBackground,
+      color: 'mainText',
+    }"
   >
     <div>
       <v-btn

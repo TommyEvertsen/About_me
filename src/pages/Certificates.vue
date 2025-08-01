@@ -1,8 +1,15 @@
 <template>
   <main>
     <v-container class="mt-10 mb-10">
-      <h1 style="text-align: center">Certificates</h1>
-      <v-row class="px-5 mt-10">
+      <h1
+        style="text-align: center"
+        :style="{
+          color: $vuetify.theme.current.colors.secondaryText,
+        }"
+      >
+        Certificates
+      </h1>
+      <v-row class="">
         <v-col
           v-for="(certificate, index) in certificates"
           :key="certificate.title"
@@ -23,7 +30,7 @@
             :title="certificate.provider"
             ><v-img
               class="align-end text-white"
-              height="450"
+              height="350"
               :src="certificate.image"
               cover
             >
@@ -45,16 +52,26 @@
               </v-icon>
             </template>
 
-            <v-card-text>
+            <v-card-text
+              :style="{
+                backgroundColor: $vuetify.theme.current.colors.cardBackground,
+                color: $vuetify.theme.current.colors.mainText,
+              }"
+            >
               {{ certificate.subtitle }}
             </v-card-text>
 
-            <v-card-actions>
+            <v-card-actions
+              :style="{
+                backgroundColor: $vuetify.theme.current.colors.cardBackground,
+                color: $vuetify.theme.current.colors.mainText,
+              }"
+            >
               <v-btn
                 class="button"
                 variant="outlined"
                 prepend-icon="mdi-lightbulb-on-outline"
-                color="#5B8FB9"
+                color="secondaryText"
                 @click="toggleReveal(index)"
               >
                 Show skills
@@ -79,7 +96,7 @@
                 </template>
                 <v-img
                   class="align-end text-white"
-                  height="450"
+                  height="350"
                   :src="certificate.image"
                   cover
                 >
@@ -98,19 +115,36 @@
                   </v-icon>
                 </template>
 
-                <v-card-text class="pb-0 d-flex justify-start ga-2">
+                <v-card-text
+                  class="pb-0 d-flex justify-start ga-2"
+                  :style="{
+                    backgroundColor:
+                      $vuetify.theme.current.colors.cardBackground,
+                    color: $vuetify.theme.current.colors.mainText,
+                  }"
+                >
                   <v-chip
                     v-for="skill in certificate.skills"
-                    :style="{ backgroundColor: skill.color, color: skill.text }"
+                    :style="{
+                      backgroundColor: skill.color,
+                      color: $vuetify.theme.current.colors.offText,
+                    }"
                     >{{ skill.title }}
                   </v-chip>
                 </v-card-text>
-                <v-card-actions class="pt-0">
+                <v-card-actions
+                  class="pt-0"
+                  :style="{
+                    backgroundColor:
+                      $vuetify.theme.current.colors.cardBackground,
+                    color: $vuetify.theme.current.colors.mainText,
+                  }"
+                >
                   <v-btn
                     class="button mt-3"
                     prepend-icon="mdi-close-circle-outline"
                     variant="outlined"
-                    color="#5B8FB9"
+                    color="secondaryText"
                     @click="toggleReveal(index)"
                   >
                     Close
@@ -216,7 +250,7 @@ const certificates = [
     skills: [
       {
         title: "Javascript",
-        color: "#f7df1e",
+        color: "#FFA500",
       },
       {
         title: "Node.Js",
@@ -239,7 +273,7 @@ const certificates = [
     skills: [
       {
         title: "JavaScript",
-        color: "#f7df1e",
+        color: "#FFA500",
       },
       {
         title: "HTML",
@@ -263,7 +297,7 @@ const certificates = [
     skills: [
       {
         title: "JavaScript",
-        color: "#f7df1e",
+        color: "#FFA500",
       },
       {
         title: "HTML",
@@ -287,7 +321,7 @@ const certificates = [
     skills: [
       {
         title: "JavaScript",
-        color: "#f7df1e",
+        color: "#FFA500",
       },
       {
         title: "HTML",
@@ -334,8 +368,8 @@ const openCertificateLink = (link) => {
   color: white;
 }
 
-.button:hover {
+/* .button:hover {
   background-color: #5b8fb9;
   color: aliceblue !important;
-}
+} */
 </style>

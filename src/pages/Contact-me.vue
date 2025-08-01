@@ -3,7 +3,14 @@
     <v-container class="px-10 mt-10 mb-10">
       <v-row>
         <v-col class="pa-2" cols="12" xl="5" lg="6" md="6" sm="12" xs="12">
-          <h1 class="contact center">Contact me</h1>
+          <h1
+            class="center"
+            :style="{
+              color: $vuetify.theme.current.colors.secondaryText,
+            }"
+          >
+            Contact me
+          </h1>
           <div class="mt-10">
             <div style="font-size: large; line-height: 2em">
               Good {{ time }} Welcome to my contact page. Please feel free to
@@ -38,7 +45,7 @@
             <div class="mt-10">
               <v-btn
                 href="https://www.linkedin.com/in/tommy-evertsen/"
-                color="#5B8FB9"
+                color="secondaryText"
                 density="comfortable"
                 class="button mr-2"
                 icon="mdi-linkedin"
@@ -46,7 +53,7 @@
               ></v-btn>
               <v-btn
                 href="https://github.com/TommyEvertsen"
-                color="#5B8FB9"
+                color="secondaryText"
                 density="comfortable"
                 class="button mx-2"
                 icon="mdi-github"
@@ -101,11 +108,6 @@ const add = addTime;
 </script>
 
 <style>
-.contact {
-  color: #5b8fb9;
-  font-weight: bold;
-}
-
 .contact-text {
   font-size: large;
   line-height: 2em;

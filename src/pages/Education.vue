@@ -3,7 +3,14 @@
     <v-container class="px-10 mt-10 mb-10">
       <v-row class="mt10">
         <v-col cols="12" xl="4" lg="6" md="12" sm="12" xs="12">
-          <h1 class="headline">Study at the University</h1>
+          <h1
+            class=""
+            :style="{
+              color: $vuetify.theme.current.colors.secondaryText,
+            }"
+          >
+            Study at the University
+          </h1>
           <div class="mt-10 uni-text">
             <p style="font-size: large; line-height: 2em">
               I completed a professional front-end development program at the
@@ -56,11 +63,6 @@ const { smAndDown } = useDisplay();
 </script>
 
 <style>
-.headline {
-  color: #5b8fb9;
-  font-weight: bold;
-}
-
 @media screen and (max-width: 768px) {
   .headline {
     text-align: center;

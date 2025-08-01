@@ -1,7 +1,7 @@
 <template>
   <div class="d-flex justify-space-around">
     <v-timeline truncate-line="start">
-      <v-timeline-item v-for="item in years">
+      <v-timeline-item v-for="item in years" dot-color="secondaryText">
         <template v-slot:opposite>
           {{ item.year }}
         </template>
@@ -49,12 +49,4 @@ const years = [
 ];
 </script>
 
-<style>
-.v-timeline-divider__inner-dot {
-  background-color: #5b8fb9 !important;
-}
-
-.v-timeline-item__opposite {
-  color: #1a237e !important;
-}
-</style>
+<style></style>
