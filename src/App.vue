@@ -2,7 +2,11 @@
   <v-app>
     <v-layout class="fullHeight">
       <AppBar />
-      <v-main style="background-color: #ffff">
+      <v-main
+        :style="{
+          backgroundColor: $vuetify.theme.current.colors.mainBackground,
+        }"
+      >
         <RouterView />
       </v-main>
     </v-layout>

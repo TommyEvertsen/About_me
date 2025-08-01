@@ -4,8 +4,8 @@
     <v-timeline-item
       v-for="(year, i) in years"
       :key="i"
-      :dot-color="year.color"
       size="small"
+      dot-color="secondaryText"
     >
       <template v-slot:opposite>
         <div
@@ -27,7 +27,7 @@
 <script setup>
 const years = [
   {
-    color: "#5B8FB9",
+    color: "mainText",
     year: "2021",
     title: "Wrote my first code",
     text: "Me and my friends decided to try programming. We made three in a row without any prior knowledge of programming",
@@ -87,9 +87,5 @@ const years = [
 
 .headlineText {
   font-weight: 500;
-}
-
-.headlineDate {
-  color: #1a237e;
 }
 </style>

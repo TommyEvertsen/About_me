@@ -3,9 +3,23 @@
     <v-container class="px-10 mt-10 mb-10">
       <v-row>
         <v-col class="pa-2" cols="12" lg="6" md="12" sm="12" xs="12">
-          <v-sheet max-width="800" width="100%" rounded>
+          <v-sheet
+            max-width="800"
+            width="100%"
+            rounded
+            :style="{
+              backgroundColor: $vuetify.theme.current.colors.mainBackground,
+            }"
+          >
             <div>
-              <h1 class="text-h4 font-weight-black headlineMe">About me</h1>
+              <h1
+                class=""
+                :style="{
+                  color: $vuetify.theme.current.colors.secondaryText,
+                }"
+              >
+                About me
+              </h1>
 
               <div class="text-body-2 mt-8 about-me-text">
                 <p style="font-size: large">My name is Tommy Evertsen.</p>
@@ -202,7 +216,7 @@ let day = days[date.getDay()];
   line-height: 2em;
 }
 
-.headlineMe {
+/* .headlineMe {
   color: #5b8fb9;
-}
+} */
 </style>

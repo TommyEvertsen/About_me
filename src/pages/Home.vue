@@ -3,9 +3,19 @@
     <v-container class="px-10 mb-10">
       <v-row>
         <v-col cols="12" xl="5" lg="5" md="12" sm="12" xs="12" class="mt-10">
-          <v-sheet class="centerHome">
+          <v-sheet
+            class="centerHome"
+            :style="{
+              backgroundColor: $vuetify.theme.current.colors.mainBackground,
+            }"
+          >
             <h3 class="fade-in">Hi there i'm</h3>
-            <h1 class="mt-2 fade-in-slow" style="color: #5b8fb9">
+            <h1
+              class="mt-2 fade-in-slow"
+              :style="{
+                color: $vuetify.theme.current.colors.secondaryText,
+              }"
+            >
               Tommy Evertsen
             </h1>
             <v-divider class="fade-in-snail" length="300" thickness="2">
@@ -42,7 +52,11 @@
             <v-chip-group column class="mt-5">
               <v-chip
                 v-for="technology in technologies"
-                style="color: #ffff; background-color: #5b8fb9"
+                :key="technology.title"
+                :style="{
+                  color: $vuetify.theme.current.colors.offText,
+                  backgroundColor: $vuetify.theme.current.colors.secondaryText,
+                }"
                 variant="outlined"
               >
                 {{ technology.title }}
@@ -53,7 +67,7 @@
               class="button mt-10"
               variant="outlined"
               prepend-icon="mdi-web"
-              color="#5B8FB9"
+              color="secondaryText"
               @click="$router.push({ name: 'contact' })"
             >
               Contact me</v-btn

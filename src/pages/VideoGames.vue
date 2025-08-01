@@ -3,7 +3,14 @@
     <v-container>
       <v-row>
         <v-col cols="12" xl="6" lg="6" md="12" sm="12" xs="12">
-          <h1 class="headline mt-10">Game development</h1>
+          <h1
+            class="mt-10"
+            :style="{
+              color: $vuetify.theme.current.colors.secondaryText,
+            }"
+          >
+            Game development
+          </h1>
           <div
             class="introText mt-10"
             cols="12"
