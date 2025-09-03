@@ -53,11 +53,11 @@
               <v-chip
                 v-for="technology in technologies"
                 :key="technology.title"
+                variant="text"
                 :style="{
                   color: $vuetify.theme.current.colors.offText,
                   backgroundColor: $vuetify.theme.current.colors.secondaryText,
                 }"
-                variant="outlined"
               >
                 {{ technology.title }}
               </v-chip>
@@ -75,8 +75,23 @@
           </v-sheet>
         </v-col>
 
-        <v-col cols="12" xl="7" lg="7" md="12" sm="12" xs="12">
-          <v-img :src="tommy" max-height="800" rounded="circle"> </v-img>
+        <v-col
+          cols="12"
+          xl="7"
+          lg="7"
+          md="12"
+          sm="12"
+          xs="12"
+          class="mt-10 imageContainer"
+        >
+          <v-img
+            :src="tommy"
+            max-height="700"
+            max-width="500"
+            class="profileImage"
+            rounded="circle"
+          >
+          </v-img>
         </v-col>
       </v-row>
     </v-container>
@@ -152,6 +167,41 @@ const technologies = [
 </script>
 
 <style>
+.imageContainer {
+  display: flex;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+}
+
+.profileImage {
+  position: relative;
+  overflow: visible;
+}
+
+.profileImage::before,
+.profileImage::after {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: conic-gradient(
+    from var(--deg) at center,
+    #00c3ff,
+    #4d0199,
+    #6300c6,
+    #00c3ff
+  );
+
+  z-index: -2;
+  padding: 2px;
+  animation: autoRotate 5s linear infinite;
+}
+
+.profileImage::after {
+  filter: blur(15px);
+}
+
 @media screen and (max-width: 768px) {
   .centerHome {
     text-align: center;
@@ -170,6 +220,12 @@ const technologies = [
 .fade-in-snail {
   opacity: 0;
   animation: fadeinsnail 1s ease-in 2s forwards;
+}
+
+@property --deg {
+  syntax: "<angle>";
+  inherits: true;
+  initial-value: 0deg;
 }
 
 @keyframes fadein {
@@ -196,6 +252,12 @@ const technologies = [
   }
   100% {
     opacity: 1;
+  }
+}
+
+@keyframes autoRotate {
+  to {
+    --deg: 360deg;
   }
 }
 </style>
