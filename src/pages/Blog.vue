@@ -3,7 +3,7 @@
     <v-container class="px-10 mt-10 mb-10">
       <v-row>
         <h1
-          class=""
+          class="headline"
           :style="{
             color: $vuetify.theme.current.colors.secondaryText,
           }"
@@ -34,7 +34,8 @@
           <v-img
             :key="currentBlogPost.image"
             class="align-end text-white fade-in"
-            height="900"
+            width="100%"
+            max-height="800"
             :src="currentBlogPost.image"
             cover
           >
@@ -153,5 +154,18 @@ const currentBlogPost = computed(() => {
   100% {
     opacity: 1;
   }
+}
+
+@media screen and (max-width: 768px) {
+  .headline {
+    text-align: center;
+  }
+}
+
+.v-img {
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  object-fit: cover;
 }
 </style>

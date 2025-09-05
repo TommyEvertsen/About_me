@@ -13,7 +13,7 @@
           >
             <div>
               <h1
-                class=""
+                class="headlineMe"
                 :style="{
                   color: $vuetify.theme.current.colors.secondaryText,
                 }"

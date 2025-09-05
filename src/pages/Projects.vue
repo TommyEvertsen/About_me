@@ -73,6 +73,8 @@
                 elevated
                 v-if="project.published"
                 :href="project.link"
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 Visit
               </v-btn>
@@ -84,6 +86,8 @@
                 color="secondaryText"
                 v-if="project.code"
                 :href="project.code"
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 Code
               </v-btn>
