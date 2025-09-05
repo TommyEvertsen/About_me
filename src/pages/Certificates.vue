@@ -30,9 +30,10 @@
             :title="certificate.provider"
             ><v-img
               class="align-end text-white"
+              width="100%"
               height="350"
               :src="certificate.image"
-              cover
+              contain
             >
             </v-img>
 
@@ -96,9 +97,10 @@
                 </template>
                 <v-img
                   class="align-end text-white"
+                  width="100%"
                   height="350"
                   :src="certificate.image"
-                  cover
+                  contain
                 >
                 </v-img>
 
@@ -372,4 +374,17 @@ const openCertificateLink = (link) => {
   background-color: #5b8fb9;
   color: aliceblue !important;
 } */
+
+.v-img {
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  object-fit: cover;
+}
+
+@media (max-width: 600px) {
+  .v-img {
+    max-height: 180px;
+  }
+}
 </style>

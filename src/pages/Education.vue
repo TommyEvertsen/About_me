@@ -4,7 +4,7 @@
       <v-row class="mt10">
         <v-col cols="12" xl="4" lg="6" md="12" sm="12" xs="12">
           <h1
-            class=""
+            class="headline"
             :style="{
               color: $vuetify.theme.current.colors.secondaryText,
             }"
