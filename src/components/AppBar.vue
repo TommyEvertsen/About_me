@@ -79,7 +79,7 @@
 </template>
 
 <script setup>
-import { ref, defineAsyncComponent } from "vue";
+import { ref, onMounted } from "vue";
 import { useRouter } from "vue-router";
 import { useTheme } from "vuetify";
 
@@ -87,12 +87,21 @@ const drawer = ref(false);
 const router = useRouter();
 const theme = useTheme();
 
+onMounted(() => {
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme && theme.global.name.value !== savedTheme) {
+    theme.global.name.value = savedTheme;
+  }
+});
+
 const show = () => {
   drawer.value = !drawer.value;
 };
 
 const toggleTheme = () => {
-  theme.global.name.value = theme.global.current.value.dark ? "light" : "dark";
+  const newTheme = theme.global.current.value.dark ? "light" : "dark";
+  theme.global.name.value = newTheme;
+  localStorage.setItem("theme", newTheme);
 };
 
 const navigateToCertificates = () => {
@@ -139,6 +148,12 @@ const navigateToContact = () => {
 
 const navigateToBlog = () => {
   router.push({ name: "blog" }).then(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+};
+
+const navigateToAchievements = () => {
+  router.push({ name: "achievements" }).then(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   });
 };
@@ -194,6 +209,12 @@ const subLinks = [
     icon: "mdi-head-dots-horizontal-outline",
     value: "blog",
     click: navigateToBlog,
+  },
+  {
+    title: "Achievements",
+    icon: "mdi-trophy",
+    value: "achievements",
+    click: navigateToAchievements,
   },
 ];
 

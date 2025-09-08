@@ -35,6 +35,21 @@
               interested in programming and web design.
             </p>
           </div>
+
+          <div v-if="animalUnlocked && alert" class="centered-alert">
+            <v-alert
+              class="alert"
+              v-model="alert"
+              close-label="Lukk"
+              color="success"
+              icon="mdi-trophy"
+              title="Achievement unlocked"
+              variant="elevated"
+              closable
+            >
+              You found the duckling, good job!
+            </v-alert>
+          </div>
         </v-col>
 
         <v-col>
@@ -48,6 +63,11 @@
 
       <TimeLine v-if="smAndUp" />
       <TimeLineMobile v-if="smAndDown" />
+
+      <div class="secretDuck flex justify-end">
+        <v-icon color="secondaryText" icon="mdi-duck" @click="unlockAnimal">
+        </v-icon>
+      </div>
     </v-container>
   </main>
 </template>
@@ -57,9 +77,18 @@ import diploma from "@/assets/images/diploma.jpg";
 import TimeLine from "@/components/TimeLine.vue";
 import TimeLineMobile from "@/components/TimeLineMobile.vue";
 import { useDisplay } from "vuetify";
+import { animalUnlocked } from "@/stores/achievements";
+import { ref } from "vue";
 
 const { smAndUp } = useDisplay();
 const { smAndDown } = useDisplay();
+
+const alert = ref(false);
+
+function unlockAnimal() {
+  animalUnlocked.value = true;
+  alert.value = true;
+}
 </script>
 
 <style>
