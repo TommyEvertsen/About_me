@@ -8,6 +8,7 @@ import Projects from "@/pages/Projects.vue";
 import VideoGames from "@/pages/VideoGames.vue";
 import Blog from "@/pages/Blog.vue";
 import { createRouter, createWebHistory } from "vue-router";
+import Achievements from "@/pages/Achievements.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -78,6 +79,14 @@ const router = createRouter({
       component: ContactMe,
       meta: {
         title: "Contact me",
+      },
+    },
+    {
+      path: "/achievements",
+      name: "achievements",
+      component: Achievements,
+      meta: {
+        title: "Achievements",
       },
     },
     {

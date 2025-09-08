@@ -21,6 +21,21 @@
                 About me
               </h1>
 
+              <div v-if="hobbyUnlocked && alert" class="centered-alert">
+                <v-alert
+                  class="alert"
+                  v-model="alert"
+                  close-label="Lukk"
+                  color="success"
+                  icon="mdi-trophy"
+                  title="Achievement unlocked"
+                  variant="elevated"
+                  closable
+                >
+                  You found my secret hobby, good job!
+                </v-alert>
+              </div>
+
               <div class="text-body-2 mt-8 about-me-text">
                 <p style="font-size: large">My name is Tommy Evertsen.</p>
 
@@ -64,9 +79,17 @@
                   Other hobbies include: fishing, video games, boardgames,
                   creating videogames in Unity, skiing, and
                   <span>
-                    <v-tooltip activator="parent" location="bottom"
-                      >(Drinking beer)</v-tooltip
+                    <v-tooltip
+                      activator="parent"
+                      location="bottom"
+                      @update:modelValue="
+                        (val) => {
+                          if (val) unlockHobby();
+                        }
+                      "
                     >
+                      Drinking beer
+                    </v-tooltip>
                     more.
                   </span>
                 </p>
@@ -183,7 +206,16 @@
 </template>
 
 <script setup>
+import { ref } from "vue";
 import { useDisplay } from "vuetify";
+import { hobbyUnlocked } from "@/stores/achievements";
+
+const alert = ref(true);
+
+function unlockHobby() {
+  hobbyUnlocked.value = true;
+  alert.value = true;
+}
 
 const { smAndUp } = useDisplay();
 const { smAndDown } = useDisplay();
@@ -216,6 +248,22 @@ let day = days[date.getDay()];
   line-height: 2em;
 }
 
+.alert {
+  z-index: 9999;
+  width: 90%;
+  max-width: 400px;
+}
+
+.centered-alert {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+  width: 90%;
+  max-width: 400px;
+  pointer-events: auto;
+}
 /* .headlineMe {
   color: #5b8fb9;
 } */
