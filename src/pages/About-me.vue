@@ -21,7 +21,7 @@
                 About me
               </h1>
 
-              <div v-if="hobbyUnlocked && alert" class="centered-alert">
+              <div v-if="alert" class="centered-alert">
                 <v-alert
                   class="alert"
                   v-model="alert"
@@ -210,7 +210,7 @@ import { ref } from "vue";
 import { useDisplay } from "vuetify";
 import { hobbyUnlocked } from "@/stores/achievements";
 
-const alert = ref(true);
+const alert = ref(false);
 
 function unlockHobby() {
   hobbyUnlocked.value = true;
@@ -263,7 +263,53 @@ let day = days[date.getDay()];
   width: 90%;
   max-width: 400px;
   pointer-events: auto;
+  animation: myAnim 2s ease 0s 1 normal forwards;
 }
+
+@keyframes myAnim {
+  0% {
+    animation-timing-function: ease-in;
+    opacity: 0;
+    transform: scale(0);
+  }
+
+  38% {
+    animation-timing-function: ease-out;
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  55% {
+    animation-timing-function: ease-in;
+    transform: scale(0.7);
+  }
+
+  72% {
+    animation-timing-function: ease-out;
+    transform: scale(1);
+  }
+
+  81% {
+    animation-timing-function: ease-in;
+    transform: scale(0.84);
+  }
+
+  89% {
+    animation-timing-function: ease-out;
+    transform: scale(1);
+  }
+
+  95% {
+    animation-timing-function: ease-in;
+    transform: scale(0.95);
+  }
+
+  100% {
+    animation-timing-function: ease-out;
+    transform: scale(1);
+  }
+}
+
 /* .headlineMe {
   color: #5b8fb9;
 } */

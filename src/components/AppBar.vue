@@ -7,9 +7,21 @@
     <v-app-bar-title>{{ $route.meta.title || "Home" }} </v-app-bar-title>
 
     <v-spacer></v-spacer>
+
+    <v-switch
+      v-if="unlockSpacemode"
+      v-model="spacemode"
+      class="switch spacemode-active"
+      :color="$vuetify.theme.current.dark ? 'yellow' : 'orange'"
+      value="red"
+      density="compact"
+      prepend-icon="mdi-rocket-launch-outline"
+      hide-details
+      size="small"
+    ></v-switch>
     <v-btn
       icon
-      class="theme-toggle-btn"
+      class="theme-toggle-btn spacemode-active"
       @click="toggleTheme"
       :color="$vuetify.theme.current.dark ? 'yellow' : 'orange'"
     >
@@ -82,6 +94,14 @@
 import { ref, onMounted } from "vue";
 import { useRouter } from "vue-router";
 import { useTheme } from "vuetify";
+import {
+  allAchievementsUnlocked,
+  checkUnlockSpacemode,
+  unlockSpacemode,
+} from "@/stores/achievements";
+import { spacemode } from "@/stores/spacemode";
+
+checkUnlockSpacemode();
 
 const drawer = ref(false);
 const router = useRouter();
@@ -212,7 +232,7 @@ const subLinks = [
   },
   {
     title: "Achievements",
-    icon: "mdi-trophy",
+    icon: "mdi-trophy-outline",
     value: "achievements",
     click: navigateToAchievements,
   },
@@ -253,5 +273,49 @@ const otherLinks = [
 
 .v-btn.v-btn--icon.v-theme--dark .v-btn__overlay {
   background: rgba(255, 255, 0, 0.2) !important;
+}
+
+.v-input__prepend > .v-icon.mdi-rocket-launch-outline {
+  color: orange;
+  opacity: unset;
+}
+.v-theme--dark .v-input__prepend > .v-icon.mdi-rocket-launch-outline {
+  color: yellow;
+  opacity: unset;
+}
+
+.v-switch__track {
+  background-color: unset;
+  background-color: white !important;
+}
+
+.switch {
+  margin-right: 10px;
+}
+
+@media (max-width: 600px) {
+  .v-toolbar-title {
+    font-size: 0.9rem !important;
+    max-width: 40vw;
+  }
+  .switch {
+    margin-right: 0px;
+  }
+  .theme-toggle-btn {
+    min-width: 24px !important;
+    height: 24px !important;
+  }
+  .v-input__prepend > .v-icon.mdi-rocket-launch-outline {
+    font-size: 18px !important;
+  }
+
+  button > span.v-btn__content > i {
+    font-size: 18px !important;
+  }
+
+  .v-switch__track {
+    background-color: unset;
+    background-color: white !important;
+  }
 }
 </style>
