@@ -90,6 +90,7 @@
             max-width="500"
             class="profileImage"
             rounded="circle"
+            :class="{ spacemode: spacemode }"
           >
           </v-img>
         </v-col>
@@ -100,6 +101,7 @@
 
 <script setup>
 import { useRouter } from "vue-router";
+import { spacemode } from "@/stores/spacemode";
 
 import { ref } from "vue";
 const loaded = ref(false);
@@ -179,8 +181,12 @@ const technologies = [
   overflow: visible;
 }
 
-.profileImage::before,
 .profileImage::after {
+  filter: blur(15px);
+}
+
+.profileImage.spacemode::before,
+.profileImage.spacemode::after {
   content: "";
   position: absolute;
   height: 100%;
@@ -192,14 +198,9 @@ const technologies = [
     #6300c6,
     #00c3ff
   );
-
   z-index: -2;
   padding: 2px;
   animation: autoRotate 5s linear infinite;
-}
-
-.profileImage::after {
-  filter: blur(15px);
 }
 
 @media screen and (max-width: 768px) {

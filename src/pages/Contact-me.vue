@@ -69,6 +69,31 @@
             max-width="900"
           >
           </v-img>
+
+          <div class="secretButtonDiv mt-5">
+            <v-btn
+              v-if="secretButtonVisible"
+              class="secretButton"
+              @click="handleSecretButton"
+            >
+              <span class="secretMark">?</span>
+            </v-btn>
+          </div>
+
+          <div v-if="alert" class="centered-alert">
+            <v-alert
+              class="alert"
+              v-model="alert"
+              close-label="Lukk"
+              color="success"
+              icon="mdi-trophy"
+              title="Achievement unlocked"
+              variant="elevated"
+              closable
+            >
+              You found the secret button, good job!
+            </v-alert>
+          </div>
         </v-col>
       </v-row>
     </v-container>
@@ -77,10 +102,12 @@
 
 <script setup>
 import { ref, onMounted } from "vue";
+import { secretButtonUnlocked } from "@/stores/achievements";
 
 const currentTime = ref("");
 const currentActivity = ref("");
 const addTime = ref("");
+const secretButtonVisible = ref(true);
 
 onMounted(() => {
   const now = new Date();
@@ -105,6 +132,13 @@ onMounted(() => {
 const time = currentTime;
 const activity = currentActivity;
 const add = addTime;
+const alert = ref(false);
+
+function handleSecretButton() {
+  secretButtonVisible.value = false;
+  secretButtonUnlocked.value = true;
+  alert.value = true;
+}
 </script>
 
 <style>
@@ -121,5 +155,19 @@ const add = addTime;
   .center {
     text-align: center;
   }
+}
+
+.secretButton {
+  box-shadow: none;
+  border: none;
+}
+
+.secretMark {
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.secretButton:hover .secretMark {
+  opacity: 1;
 }
 </style>

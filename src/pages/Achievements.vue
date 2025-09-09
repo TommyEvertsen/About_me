@@ -68,6 +68,11 @@
                 icon="mdi-treasure-chest"
                 class="icon"
                 :color="allAchievementsUnlocked ? '#FFD700' : '#989898'"
+                :disabled="!allAchievementsUnlocked"
+                :style="{
+                  cursor: allAchievementsUnlocked ? 'pointer' : 'not-allowed',
+                }"
+                @click="allAchievementsUnlocked && handleTreasureChestClick()"
                 size="40"
               ></v-icon>
             </div>
@@ -75,12 +80,25 @@
             <v-card-text style="text-align: center">
               {{
                 allAchievementsUnlocked
-                  ? "Congratulations!"
+                  ? "Congratulations! Click to open your reward"
                   : "Can you find them all?"
               }}
             </v-card-text>
           </v-card>
         </v-col>
+        <div v-if="unlockSpacemode && alert" class="centered-alert">
+          <v-alert
+            class="alert"
+            v-model="alert"
+            close-label="Lukk"
+            color="success"
+            icon="mdi-trophy"
+            title="Spacemode unlocked "
+            variant="elevated"
+            closable
+            >Press the switch in the upper right corner to see magic
+          </v-alert>
+        </div>
       </v-row>
     </v-container>
   </main>
@@ -90,11 +108,24 @@
 import {
   hobbyUnlocked,
   animalUnlocked,
+  secretButtonUnlocked,
   allAchievementsUnlocked,
+  checkUnlockSpacemode,
+  unlockSpacemode,
 } from "@/stores/achievements";
+import { ref } from "vue";
 import { checkAllAchievements } from "@/stores/achievements";
 
 checkAllAchievements();
+
+const alert = ref(false);
+
+function handleTreasureChestClick() {
+  checkUnlockSpacemode();
+  if (unlockSpacemode.value) {
+    alert.value = true;
+  }
+}
 
 const achievements = [
   {
@@ -106,10 +137,17 @@ const achievements = [
   },
   {
     title: "A little animal is hiding in plain sight",
-    icon: "mdi-trophy",
+    icon: "mdi-trophy-award",
     description: "The little duck got found",
     hint: "Hint: Duck",
     unlocked: animalUnlocked,
+  },
+  {
+    title: "Find the secret button",
+    icon: "mdi-trophy-variant",
+    description: "Congratulations on finding the secret button!",
+    hint: "Hint: Hover in thin air",
+    unlocked: secretButtonUnlocked,
   },
 ];
 </script>

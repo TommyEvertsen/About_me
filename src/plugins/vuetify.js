@@ -26,6 +26,7 @@ export default createVuetify({
           secondaryText: "#5b8fb9",
           offText: "#ffffff",
           navLinks: "#6495ed",
+          switch: "#ffffff",
         },
       },
       dark: {
@@ -38,6 +39,7 @@ export default createVuetify({
           secondaryText: "#bb86fc",
           offText: "#121212",
           navLinks: "#bb86fc",
+          switch: "#ffffff",
         },
       },
     },

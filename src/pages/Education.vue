@@ -84,10 +84,14 @@ const { smAndUp } = useDisplay();
 const { smAndDown } = useDisplay();
 
 const alert = ref(false);
+let achievementNotFound = ref(true);
 
 function unlockAnimal() {
-  animalUnlocked.value = true;
-  alert.value = true;
+  if (achievementNotFound) {
+    animalUnlocked.value = true;
+    alert.value = true;
+    achievementNotFound = false;
+  }
 }
 </script>
 
