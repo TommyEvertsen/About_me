@@ -148,6 +148,7 @@
                     variant="outlined"
                     color="secondaryText"
                     @click="toggleReveal(index)"
+                    :class="{ spacemode: spacemode }"
                   >
                     Close
                   </v-btn>
@@ -171,6 +172,7 @@ import udemy from "@/assets/udemy.jpg";
 import duke from "@/assets/images/duke.jpg";
 import ucdavis from "@/assets/images/ucdavis.jpg";
 import apexcertif from "@/assets/apex.jpg";
+import { spacemode } from "@/stores/spacemode";
 
 const certificates = [
   {
@@ -369,11 +371,6 @@ const openCertificateLink = (link) => {
 .v-card-subtitle {
   color: white;
 }
-
-/* .button:hover {
-  background-color: #5b8fb9;
-  color: aliceblue !important;
-} */
 
 .v-img {
   width: 100%;
