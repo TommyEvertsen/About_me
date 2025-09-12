@@ -21,7 +21,7 @@
           class="flex"
         >
           <v-card
-            class="mx-auto"
+            class="mx-auto achievementCard"
             :title="achivement.title"
             style="text-align: center"
             height="200"
@@ -30,6 +30,7 @@
               backgroundColor: $vuetify.theme.current.colors.cardBackground,
               color: $vuetify.theme.current.colors.mainText,
             }"
+            :class="{ spacemode: spacemode }"
           >
             <div class="iconDiv">
               <v-icon
@@ -52,7 +53,7 @@
       <v-row class="mt-16">
         <v-col cols="12" xl="12" lg="12" md="12" sm="12">
           <v-card
-            class="mx-auto flex justify-center"
+            class="mx-auto flex justify-center allAchievementsCard"
             title="Unlock all achivements for a price"
             style="text-align: center"
             height="200"
@@ -62,6 +63,7 @@
               backgroundColor: $vuetify.theme.current.colors.cardBackground,
               color: $vuetify.theme.current.colors.mainText,
             }"
+            :class="{ spacemode: spacemode }"
           >
             <div class="iconDiv">
               <v-icon
@@ -115,6 +117,7 @@ import {
 } from "@/stores/achievements";
 import { ref } from "vue";
 import { checkAllAchievements } from "@/stores/achievements";
+import { spacemode } from "@/stores/spacemode";
 
 checkAllAchievements();
 
@@ -161,5 +164,71 @@ const achievements = [
   justify-content: center;
   margin-top: 1rem;
   margin-bottom: 0.5rem;
+}
+
+.allAchievementsCard {
+  position: relative;
+}
+
+.allAchievementsCard.spacemode {
+  color: white !important;
+}
+
+.allAchievementsCard.spacemode::before,
+.allAchievementsCard.spacemode::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: conic-gradient(
+    from var(--deg) at center,
+    #ffd700,
+    #a2682a,
+    #a2682a,
+    #ffd700
+  );
+  z-index: -2;
+  filter: blur(15px);
+  animation: autoRotate 5s linear infinite;
+  pointer-events: none;
+}
+
+.achievementCard.spacemode {
+  color: white !important;
+}
+
+.achievementCard.spacemode::before,
+.achievementCard.spacemode::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: conic-gradient(
+    from var(--deg) at center,
+    #00c3ff,
+    #4d0199,
+    #6300c6,
+    #00c3ff
+  );
+  z-index: -2;
+  filter: blur(15px);
+  animation: autoRotate 5s linear infinite;
+  pointer-events: none;
+}
+
+@property --deg {
+  syntax: "<angle>";
+  inherits: true;
+  initial-value: 0deg;
+}
+
+@keyframes autoRotate {
+  to {
+    --deg: 360deg;
+  }
 }
 </style>

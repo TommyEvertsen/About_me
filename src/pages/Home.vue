@@ -69,6 +69,7 @@
               prepend-icon="mdi-web"
               color="secondaryText"
               @click="$router.push({ name: 'contact' })"
+              :class="{ spacemode: spacemode }"
             >
               Contact me</v-btn
             >
@@ -89,7 +90,6 @@
             max-height="700"
             max-width="500"
             class="profileImage"
-            rounded="circle"
             :class="{ spacemode: spacemode }"
           >
           </v-img>
@@ -181,10 +181,6 @@ const technologies = [
   overflow: visible;
 }
 
-.profileImage::after {
-  filter: blur(15px);
-}
-
 .profileImage.spacemode::before,
 .profileImage.spacemode::after {
   content: "";
@@ -200,12 +196,74 @@ const technologies = [
   );
   z-index: -2;
   padding: 2px;
+  filter: blur(15px);
   animation: autoRotate 5s linear infinite;
+}
+
+.button.spacemode {
+  position: relative;
+  overflow: hidden;
+  border: none;
+  outline: none;
+  color: #000000 !important;
+  background: #111;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.button.spacemode::before {
+  content: "";
+  background: linear-gradient(
+    45deg,
+    #5b8fb9,
+    #6495ed,
+    #002bff,
+    #5b8fb9,
+    #bb86fc,
+    #7a00ff,
+    #bb86fc,
+    #7a00ff,
+    #5b8fb9
+  );
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(5px);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  animation: glowing 20s linear infinite;
+  opacity: 1;
+}
+
+.button.spacemode::after {
+  z-index: -1;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #111;
+  left: 0;
+  top: 0;
+  border-radius: 10px;
 }
 
 @media screen and (max-width: 768px) {
   .centerHome {
     text-align: center;
+  }
+}
+
+@keyframes glowing {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 400% 0;
+  }
+  100% {
+    background-position: 0 0;
   }
 }
 

@@ -10,6 +10,8 @@
             :style="{
               backgroundColor: $vuetify.theme.current.colors.mainBackground,
             }"
+            class="textContainer"
+            :class="{ spacemode: spacemode }"
           >
             <div>
               <h1
@@ -17,6 +19,8 @@
                 :style="{
                   color: $vuetify.theme.current.colors.secondaryText,
                 }"
+                :class="{ spacemode: spacemode }"
+                data-text="About me"
               >
                 About me
               </h1>
@@ -36,7 +40,10 @@
                 </v-alert>
               </div>
 
-              <div class="text-body-2 mt-8 about-me-text">
+              <div
+                class="text-body-2 mt-8 about-me-text"
+                :class="{ spacemode: spacemode }"
+              >
                 <p style="font-size: large">My name is Tommy Evertsen.</p>
 
                 <p class="pt-5" style="font-size: large">
@@ -153,7 +160,7 @@
 
           <v-carousel
             v-if="smAndDown"
-            height="300"
+            height="auto"
             cycle
             continuous
             touch
@@ -161,7 +168,7 @@
           >
             <v-carousel-item
               src="@/assets/images/cabin.jpg"
-              cover
+              cover=""
             ></v-carousel-item>
 
             <v-carousel-item
@@ -209,6 +216,7 @@
 import { ref } from "vue";
 import { useDisplay } from "vuetify";
 import { hobbyUnlocked } from "@/stores/achievements";
+import { spacemode } from "@/stores/spacemode";
 
 const alert = ref(false);
 
@@ -234,16 +242,6 @@ let day = days[date.getDay()];
 </script>
 
 <style>
-@media screen and (max-width: 768px) {
-  .coding_journey {
-    margin-top: 0 !important;
-  }
-
-  .headlineMe {
-    text-align: center;
-  }
-}
-
 .about-me-text {
   line-height: 2em;
 }
@@ -264,6 +262,22 @@ let day = days[date.getDay()];
   max-width: 400px;
   pointer-events: auto;
   animation: myAnim 2s ease 0s 1 normal forwards;
+}
+
+.headlineMe.spacemode {
+  position: relative;
+}
+
+.headlineMe.spacemode::before {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  animation: glitch 2s infinite;
+  clip-path: polygon(0 0, 100% 0, 100% 45%, 0 45%);
+  transform: translate(-2px, -2px);
 }
 
 @keyframes myAnim {
@@ -310,7 +324,29 @@ let day = days[date.getDay()];
   }
 }
 
-/* .headlineMe {
-  color: #5b8fb9;
-} */
+@keyframes glitch {
+  0%,
+  100% {
+    clip-path: polygon(0 0, 100% 0, 100% 45%, 0 45%);
+    transform: translate(0);
+  }
+  33% {
+    clip-path: polygon(0 0, 100% 0, 100% 15%, 0 15%);
+    transform: translate(-5px, -5px);
+  }
+  66% {
+    clip-path: polygon(0 85%, 100% 85%, 100% 100%, 0 100%);
+    transform: translate(5px, 5px);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .coding_journey {
+    margin-top: 0 !important;
+  }
+
+  .headlineMe {
+    text-align: center;
+  }
+}
 </style>
