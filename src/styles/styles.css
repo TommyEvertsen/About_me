@@ -15,3 +15,305 @@
     max-width: 2200px !important;
   }
 }
+
+/* Alert */
+.alert {
+  z-index: 9999;
+  width: 90%;
+  max-width: 400px;
+}
+
+.centered-alert {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+  width: 90%;
+  max-width: 400px;
+  pointer-events: auto;
+  animation: myAnim 2s ease 0s 1 normal forwards;
+}
+
+/* Spacemode */
+
+/* Profile image on homepage */
+.profileImage.spacemode::before,
+.profileImage.spacemode::after {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: conic-gradient(
+    from var(--deg) at center,
+    #00c3ff,
+    #4d0199,
+    #6300c6,
+    #00c3ff
+  );
+  z-index: -2;
+  padding: 2px;
+  filter: blur(15px);
+  animation: autoRotate 5s linear infinite;
+}
+
+/* Buttons */
+.button.spacemode {
+  position: relative;
+  overflow: hidden;
+  border: none;
+  outline: none;
+  color: #000000 !important;
+  background: #111;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.button.spacemode::before {
+  content: "";
+  background: linear-gradient(
+    45deg,
+    #5b8fb9,
+    #6495ed,
+    #002bff,
+    #5b8fb9,
+    #bb86fc,
+    #7a00ff,
+    #bb86fc,
+    #7a00ff,
+    #5b8fb9
+  );
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(5px);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  animation: glowing 20s linear infinite;
+  opacity: 1;
+}
+
+.button.spacemode::after {
+  z-index: -1;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #111;
+  left: 0;
+  top: 0;
+  border-radius: 10px;
+}
+
+/* About me page  */
+.headlineMe.spacemode {
+  position: relative;
+}
+
+.headlineMe.spacemode::before {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  animation: glitch 2s infinite;
+  clip-path: polygon(0 0, 100% 0, 100% 45%, 0 45%);
+  transform: translate(-2px, -2px);
+}
+
+/* Projects */
+.v-card-title.spacemode {
+  color: #0f0 !important;
+  text-shadow: 0 0 15px #0f0, 0 0 15px #0f0, 0 0 30px #0f0;
+  position: relative;
+  z-index: 2;
+}
+
+.v-card-title.spacemode::before {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  animation: glitch 2s infinite;
+  clip-path: polygon(0 0, 100% 0, 100% 45%, 0 45%);
+  transform: translate(-2px, -2px);
+  color: #0f0;
+  text-shadow: 0 0 5px #0f0, 0 0 15px #0f0;
+}
+
+.rain.spacemode {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: repeating-linear-gradient(
+    0deg,
+    rgba(0, 255, 0, 0.1) 0,
+    rgba(0, 255, 0, 0.2) 2px,
+    transparent 6px
+  );
+  animation: rain 6s linear infinite;
+  z-index: 1;
+}
+
+/*  Achivements page */
+.allAchievementsCard.spacemode {
+  color: white !important;
+}
+
+.allAchievementsCard.spacemode::before,
+.allAchievementsCard.spacemode::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: conic-gradient(
+    from var(--deg) at center,
+    #ffd700,
+    #a2682a,
+    #a2682a,
+    #ffd700
+  );
+  z-index: -2;
+  filter: blur(15px);
+  animation: autoRotate 5s linear infinite;
+  pointer-events: none;
+}
+
+.achievementCard.spacemode {
+  color: white !important;
+}
+
+.achievementCard.spacemode::before,
+.achievementCard.spacemode::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: conic-gradient(
+    from var(--deg) at center,
+    #00c3ff,
+    #4d0199,
+    #6300c6,
+    #00c3ff
+  );
+  z-index: -2;
+  filter: blur(15px);
+  animation: autoRotate 5s linear infinite;
+  pointer-events: none;
+}
+
+@property --deg {
+  syntax: "<angle>";
+  inherits: true;
+  initial-value: 0deg;
+}
+
+/* Animations */
+@keyframes autoRotate {
+  to {
+    --deg: 360deg;
+  }
+}
+
+@keyframes glitch {
+  0%,
+  100% {
+    clip-path: polygon(0 0, 100% 0, 100% 45%, 0 45%);
+    transform: translate(0);
+  }
+  33% {
+    clip-path: polygon(0 0, 100% 0, 100% 15%, 0 15%);
+    transform: translate(-5px, -5px);
+  }
+  66% {
+    clip-path: polygon(0 85%, 100% 85%, 100% 100%, 0 100%);
+    transform: translate(5px, 5px);
+  }
+}
+
+@keyframes myAnim {
+  0% {
+    animation-timing-function: ease-in;
+    opacity: 0;
+    transform: scale(0);
+  }
+
+  38% {
+    animation-timing-function: ease-out;
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  55% {
+    animation-timing-function: ease-in;
+    transform: scale(0.7);
+  }
+
+  72% {
+    animation-timing-function: ease-out;
+    transform: scale(1);
+  }
+
+  81% {
+    animation-timing-function: ease-in;
+    transform: scale(0.84);
+  }
+
+  89% {
+    animation-timing-function: ease-out;
+    transform: scale(1);
+  }
+
+  95% {
+    animation-timing-function: ease-in;
+    transform: scale(0.95);
+  }
+
+  100% {
+    animation-timing-function: ease-out;
+    transform: scale(1);
+  }
+}
+
+@keyframes glowing {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 400% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+
+@keyframes rain {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(100%);
+  }
+}
+
+@keyframes glow {
+  0% {
+    text-shadow: 0 0 5px #ff005e, 0 0 10px #ff005e, 0 0 20px #ff005e,
+      0 0 40px #ff005e, 0 0 80px #ff005e;
+  }
+  100% {
+    text-shadow: 0 0 10px #00d4ff, 0 0 20px #00d4ff, 0 0 40px #00d4ff,
+      0 0 80px #00d4ff, 0 0 160px #00d4ff;
+  }
+}

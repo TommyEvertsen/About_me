@@ -24,10 +24,11 @@
             rounded="lg"
             hover
             color="#f5f5f5"
-            class="mx-auto mt-5"
+            class="mx-auto mt-5 card"
             max-width="550"
             :subtitle="certificate.title"
             :title="certificate.provider"
+            :class="{ spacemode: spacemode }"
             ><v-img
               class="align-end text-white"
               width="100%"
@@ -69,11 +70,12 @@
               }"
             >
               <v-btn
-                class="button"
+                class="Certificatebutton"
                 variant="outlined"
                 prepend-icon="mdi-lightbulb-on-outline"
                 color="secondaryText"
                 @click="toggleReveal(index)"
+                :class="{ spacemode: spacemode }"
               >
                 Show skills
               </v-btn>
@@ -143,12 +145,11 @@
                   }"
                 >
                   <v-btn
-                    class="button mt-3"
+                    class="mt-3"
                     prepend-icon="mdi-close-circle-outline"
                     variant="outlined"
                     color="secondaryText"
                     @click="toggleReveal(index)"
-                    :class="{ spacemode: spacemode }"
                   >
                     Close
                   </v-btn>
