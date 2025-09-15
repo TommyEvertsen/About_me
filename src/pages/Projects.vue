@@ -27,9 +27,14 @@
             max-width="550"
             rounded="lg"
           >
-            <v-card-title style="background-color: #301e67; color: white">{{
-              project.title
-            }}</v-card-title>
+            <v-card-title
+              style="background-color: #301e67; color: white"
+              :class="{ spacemode: spacemode }"
+              :data-text="project.title"
+            >
+              {{ project.title }}
+              <div class="rain" :class="{ spacemode: spacemode }"></div>
+            </v-card-title>
             <v-img
               class="align-end text-white"
               height="350"
@@ -75,6 +80,7 @@
                 :href="project.link"
                 target="_blank"
                 rel="noopener noreferrer"
+                :class="{ spacemode: spacemode }"
               >
                 Visit
               </v-btn>
@@ -88,6 +94,7 @@
                 :href="project.code"
                 target="_blank"
                 rel="noopener noreferrer"
+                :class="{ spacemode: spacemode }"
               >
                 Code
               </v-btn>
@@ -106,6 +113,7 @@ import universe from "@/assets/universe.jpg";
 import fireAndFlesh from "@/assets/images/fire2.jpg";
 import dragon from "@/assets/images/Dragon.jpg";
 import warehouse from "@/assets/warehouse.jpg";
+import { spacemode } from "@/stores/spacemode";
 
 const hobbyProjects = [
   {
