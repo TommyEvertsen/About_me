@@ -58,7 +58,9 @@
       </v-row>
 
       <v-container class="mt-10 mb-10">
-        <h2 class="text-center">My coding journey</h2>
+        <h2 class="text-center gradient-text" :class="{ spacemode: spacemode }">
+          My coding journey
+        </h2>
       </v-container>
 
       <TimeLine v-if="smAndUp" />
@@ -79,6 +81,7 @@ import TimeLineMobile from "@/components/TimeLineMobile.vue";
 import { useDisplay } from "vuetify";
 import { animalUnlocked } from "@/stores/achievements";
 import { ref } from "vue";
+import { spacemode } from "@/stores/spacemode";
 
 const { smAndUp } = useDisplay();
 const { smAndDown } = useDisplay();

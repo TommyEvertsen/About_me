@@ -5,13 +5,16 @@
         <template v-slot:opposite>
           {{ item.year }}
         </template>
-        {{ item.title }}
+        <span class="gradient-text" :class="{ spacemode: spacemode }">
+          {{ item.title }}
+        </span>
       </v-timeline-item>
     </v-timeline>
   </div>
 </template>
 
 <script setup>
+import { spacemode } from "@/stores/spacemode";
 const years = [
   {
     year: "2021",

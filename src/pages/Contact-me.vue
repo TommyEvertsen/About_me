@@ -3,11 +3,12 @@
     <v-container class="px-10 mt-10 mb-10">
       <v-row>
         <v-col class="pa-2" cols="12" xl="5" lg="6" md="6" sm="12" xs="12">
+          <!-- Contact me -->
           <h1
-            class="center"
-            :style="{
-              color: $vuetify.theme.current.colors.secondaryText,
-            }"
+            v-if="showContactMe"
+            class="center typewriter"
+            :style="{ color: $vuetify.theme.current.colors.secondaryText }"
+            :class="{ spacemode: spacemode }"
           >
             Contact me
           </h1>
@@ -30,7 +31,13 @@
               <p>Have a good {{ time }}</p>
             </div>
 
-            <h2 class="mt-10">Contact information</h2>
+            <h2
+              v-if="showContactInfo"
+              class="mt-10 typewriter"
+              :class="{ spacemode: spacemode }"
+            >
+              Contact information
+            </h2>
 
             <p class="mt-10" style="font-size: large; line-height: 2em">
               Tommy Evertsen
@@ -40,7 +47,13 @@
               Email: tommyevertsen85@gmail.com
             </p>
 
-            <h3 class="mt-10">Stay in touch!</h3>
+            <h3
+              v-if="showStayInTouch"
+              class="mt-10 typewriter"
+              :class="{ spacemode: spacemode }"
+            >
+              Stay in touch!
+            </h3>
 
             <div class="mt-10">
               <v-btn
@@ -103,11 +116,16 @@
 <script setup>
 import { ref, onMounted } from "vue";
 import { secretButtonUnlocked } from "@/stores/achievements";
+import { spacemode } from "@/stores/spacemode";
 
 const currentTime = ref("");
 const currentActivity = ref("");
 const addTime = ref("");
 const secretButtonVisible = ref(true);
+
+const showContactMe = ref(false);
+const showContactInfo = ref(false);
+const showStayInTouch = ref(false);
 
 onMounted(() => {
   const now = new Date();
@@ -127,6 +145,16 @@ onMounted(() => {
     currentTime.value = " evening";
     currentActivity.value = "enjoying a hobby activity";
   }
+
+  setTimeout(() => {
+    showContactMe.value = true;
+    setTimeout(() => {
+      showContactInfo.value = true;
+      setTimeout(() => {
+        showStayInTouch.value = true;
+      }, 1000);
+    }, 1000);
+  }, 300);
 });
 
 const time = currentTime;
@@ -155,6 +183,15 @@ function handleSecretButton() {
   .center {
     text-align: center;
   }
+  .typewriter.spacemode {
+    overflow: hidden;
+    border-right: 0.15em solid #fff;
+    white-space: nowrap;
+    animation: typing 3s steps(40, end) forwards,
+      blink-caret 0.75s step-end infinite;
+    width: 0;
+    margin: 0 auto;
+  }
 }
 
 .secretButton {
@@ -169,5 +206,35 @@ function handleSecretButton() {
 
 .secretButton:hover .secretMark {
   opacity: 1;
+}
+
+.typewriter.spacemode {
+  overflow: hidden;
+  border-right: 0.15em solid #fff;
+  white-space: nowrap;
+  animation: typing 3s steps(40, end) forwards,
+    blink-caret 0.75s step-end infinite;
+  width: 0;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+@keyframes blink-caret {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: #fff;
+  }
+}
+
+@media screen {
 }
 </style>

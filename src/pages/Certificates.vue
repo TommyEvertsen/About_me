@@ -1,6 +1,9 @@
 <template>
-  <main>
-    <v-container class="mt-10 mb-10">
+  <main class="space" :class="{ spacemode: spacemode }">
+    <v-container
+      class="mt-10 mb-10 space stars2"
+      :class="{ spacemode: spacemode }"
+    >
       <h1
         style="text-align: center"
         :style="{
@@ -30,7 +33,8 @@
             :title="certificate.provider"
             :class="{ spacemode: spacemode }"
             ><v-img
-              class="align-end text-white"
+              :class="{ spacemode: spacemode }"
+              class="align-end text-white certificateImages"
               width="100%"
               height="350"
               :src="certificate.image"
@@ -373,11 +377,30 @@ const openCertificateLink = (link) => {
   color: white;
 }
 
+.v-responsive.v-img.spacemode.certificateImages {
+  overflow: hidden;
+}
+
 .v-img {
   width: 100%;
   height: auto;
   max-width: 100%;
   object-fit: cover;
+}
+
+.certificateImages.spacemode {
+  animation: twistAnimation 3s infinite alternate;
+  z-index: -1;
+}
+
+@keyframes twistAnimation {
+  0% {
+    transform: matrix(1, 0, 0, 1, 0, 0);
+  }
+
+  100% {
+    transform: matrix(1.1, 1, -1, 1.2, 30, 30);
+  }
 }
 
 @media (max-width: 600px) {
