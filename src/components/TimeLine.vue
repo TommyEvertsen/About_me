@@ -6,15 +6,19 @@
       :key="i"
       size="small"
       dot-color="secondaryText"
+      :class="{ spacemode: spacemode }"
     >
       <template v-slot:opposite>
         <div
-          :class="`pt-1 headlineDate font-weight-bold `"
+          :class="`pt-1 headlineDate font-weight-bold`"
           v-text="year.year"
         ></div>
       </template>
-      <div>
-        <h2 :class="`mt-n1 headlineText font-weight-light mb-4  `">
+      <div class="glass neon-glow pa-4 mb-4">
+        <h2
+          class="mt-n1 headlineText font-weight-light mb-4 gradient-text"
+          :class="{ spacemode: spacemode }"
+        >
           {{ year.title }}
         </h2>
         <div>
@@ -25,6 +29,8 @@
   </v-timeline>
 </template>
 <script setup>
+import { spacemode } from "@/stores/spacemode";
+
 const years = [
   {
     color: "mainText",
@@ -87,5 +93,32 @@ const years = [
 
 .headlineText {
   font-weight: 500;
+}
+
+.gradient-text.spacemode {
+  background: linear-gradient(90deg, #ff8a00, #e52e71, #4a00e0, #00c3ff);
+  background-size: 200% 200%;
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  animation: gradientMove 3s linear infinite;
+}
+
+.gradient-text.spacemode {
+  background: linear-gradient(90deg, #ff8a00, #e52e71, #4a00e0, #00c3ff);
+  background-size: 200% 200%;
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  animation: gradientMove 3s linear infinite;
+}
+
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
 }
 </style>

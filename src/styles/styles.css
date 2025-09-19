@@ -29,10 +29,26 @@
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 9999;
-  width: 90%;
+  width: 90vw;
   max-width: 400px;
   pointer-events: auto;
   animation: myAnim 2s ease 0s 1 normal forwards;
+  box-sizing: border-box;
+}
+
+@media (max-width: 600px) {
+  .centered-alert {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+  }
 }
 
 /* Spacemode */
@@ -213,6 +229,26 @@
   pointer-events: none;
 }
 
+/* Education */
+
+.gradient-text.spacemode {
+  background: linear-gradient(
+    90deg,
+    #5b8fb9,
+    #6495ed,
+    #002bff,
+    #bb86fc,
+    #7a00ff,
+    #bb86fc,
+    #5b8fb9
+  );
+  background-size: 200% 200%;
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  animation: gradientMove 3s linear infinite;
+}
+
 @property --deg {
   syntax: "<angle>";
   inherits: true;
@@ -315,5 +351,14 @@
   100% {
     text-shadow: 0 0 10px #00d4ff, 0 0 20px #00d4ff, 0 0 40px #00d4ff,
       0 0 80px #00d4ff, 0 0 160px #00d4ff;
+  }
+}
+
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
   }
 }
