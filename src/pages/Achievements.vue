@@ -70,7 +70,7 @@
                 icon="mdi-treasure-chest"
                 class="icon"
                 :color="allAchievementsUnlocked ? '#FFD700' : '#989898'"
-                :disabled="!allAchievementsUnlocked"
+                :disabled="!allAchievementsUnlocked || treasureChestOpened"
                 :style="{
                   cursor: allAchievementsUnlocked ? 'pointer' : 'not-allowed',
                 }"
@@ -119,6 +119,8 @@ import { ref, onMounted } from "vue";
 import { checkAllAchievements } from "@/stores/achievements";
 import { spacemode } from "@/stores/spacemode";
 
+let treasureChestOpened = ref(false);
+
 onMounted(() => {
   if (sessionStorage.getItem("hobbyUnlocked") === "true") {
     hobbyUnlocked.value = true;
@@ -129,6 +131,10 @@ onMounted(() => {
   if (sessionStorage.getItem("secretButtonUnlocked") === "true") {
     secretButtonUnlocked.value = true;
   }
+  if (sessionStorage.getItem("treasureChestOpened") === "true") {
+    treasureChestOpened.value = true;
+  }
+
   checkAllAchievements();
 });
 
@@ -139,6 +145,8 @@ function handleTreasureChestClick() {
   if (unlockSpacemode.value) {
     alert.value = true;
   }
+  treasureChestOpened.value = true;
+  sessionStorage.setItem("treasureChestOpened", "true");
 }
 
 const achievements = [
