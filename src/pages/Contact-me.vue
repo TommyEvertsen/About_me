@@ -3,17 +3,17 @@
     <v-container class="px-10 mt-10 mb-10">
       <v-row>
         <v-col class="pa-2" cols="12" xl="5" lg="6" md="6" sm="12" xs="12">
-          <!-- Contact me -->
           <h1
-            v-if="showContactMe"
-            class="center typewriter"
-            :style="{ color: $vuetify.theme.current.colors.secondaryText }"
+            class=""
+            :style="{
+              color: $vuetify.theme.current.colors.secondaryText,
+            }"
             :class="{ spacemode: spacemode }"
           >
             Contact me
           </h1>
           <div class="mt-10">
-            <div style="font-size: large; line-height: 2em">
+            <div class="paragraphText">
               Good {{ time }} Welcome to my contact page. Please feel free to
               reach out to me using the email address provided below. If you are
               interested in exploring my coding projects, you can visit my
@@ -31,31 +31,19 @@
               <p>Have a good {{ time }}</p>
             </div>
 
-            <h2
-              v-if="showContactInfo"
-              class="mt-10 typewriter"
-              :class="{ spacemode: spacemode }"
-            >
+            <h2 class="mt-10" :class="{ spacemode: spacemode }">
               Contact information
             </h2>
 
-            <p class="mt-10" style="font-size: large; line-height: 2em">
-              Tommy Evertsen
-            </p>
+            <p class="mt-10 paragraphText">Tommy Evertsen</p>
 
-            <p style="font-size: large; line-height: 2em">
-              Email: tommyevertsen85@gmail.com
-            </p>
+            <p class="paragraphText">Email: tommyevertsen85@gmail.com</p>
 
-            <h3
-              v-if="showStayInTouch"
-              class="mt-10 typewriter"
-              :class="{ spacemode: spacemode }"
-            >
+            <h3 class="mt-10" :class="{ spacemode: spacemode }">
               Stay in touch!
             </h3>
 
-            <div class="mt-10">
+            <div class="mt-5">
               <v-btn
                 href="https://www.linkedin.com/in/tommy-evertsen/"
                 color="secondaryText"
@@ -77,7 +65,8 @@
         <v-col class="pa-2">
           <v-img
             src="@/assets/images/tommyAvatar.jpg"
-            class="rounded-lg mx-auto"
+            class="rounded-lg mx-auto floating-img"
+            :class="{ spacemode: spacemode }"
             max-height="500"
             max-width="900"
           >
@@ -127,35 +116,23 @@ const showContactMe = ref(false);
 const showContactInfo = ref(false);
 const showStayInTouch = ref(false);
 
-onMounted(() => {
-  const now = new Date();
-  const hour = now.getHours();
+const now = new Date();
+const hour = now.getHours();
 
-  if (hour >= 22 || hour < 5) {
-    currentTime.value = "night";
-    currentActivity.value = " sleeping";
-  } else if (hour >= 6 && hour < 10) {
-    currentTime.value = " morning";
-    currentActivity.value = "at work";
-  } else if (hour >= 11 && hour < 18) {
-    currentTime.value = " day";
-    currentActivity.value = "at work";
-    addTime.value = "time";
-  } else {
-    currentTime.value = " evening";
-    currentActivity.value = "enjoying a hobby activity";
-  }
-
-  setTimeout(() => {
-    showContactMe.value = true;
-    setTimeout(() => {
-      showContactInfo.value = true;
-      setTimeout(() => {
-        showStayInTouch.value = true;
-      }, 1000);
-    }, 1000);
-  }, 300);
-});
+if (hour >= 22 || hour < 5) {
+  currentTime.value = "night";
+  currentActivity.value = " sleeping";
+} else if (hour >= 6 && hour < 10) {
+  currentTime.value = " morning";
+  currentActivity.value = "at work";
+} else if (hour >= 11 && hour < 18) {
+  currentTime.value = " day";
+  currentActivity.value = "at work";
+  addTime.value = "time";
+} else {
+  currentTime.value = " evening";
+  currentActivity.value = "enjoying a hobby activity";
+}
 
 const time = currentTime;
 const activity = currentActivity;
@@ -163,10 +140,21 @@ const add = addTime;
 const alert = ref(false);
 
 function handleSecretButton() {
-  secretButtonVisible.value = false;
-  secretButtonUnlocked.value = true;
-  alert.value = true;
+  if (!secretButtonUnlocked.value && sessionStorage.getItem('secretButtonUnlocked') !== 'true') {
+    secretButtonVisible.value = false;
+    secretButtonUnlocked.value = true;
+    alert.value = true;
+    sessionStorage.setItem('secretButtonUnlocked', 'true');
+  }
 }
+
+onMounted(() => {
+  if (sessionStorage.getItem('secretButtonUnlocked') === 'true') {
+    secretButtonUnlocked.value = true;
+    secretButtonVisible.value = false;
+    alert.value = false;
+  }
+});
 </script>
 
 <style>
@@ -180,17 +168,8 @@ function handleSecretButton() {
 }
 
 @media screen and (max-width: 768px) {
-  .center {
-    text-align: center;
-  }
-  .typewriter.spacemode {
-    overflow: hidden;
-    border-right: 0.15em solid #fff;
-    white-space: nowrap;
-    animation: typing 3s steps(40, end) forwards,
-      blink-caret 0.75s step-end infinite;
-    width: 0;
-    margin: 0 auto;
+  .floating-img {
+    margin-top: 20px;
   }
 }
 
@@ -208,33 +187,16 @@ function handleSecretButton() {
   opacity: 1;
 }
 
-.typewriter.spacemode {
-  overflow: hidden;
-  border-right: 0.15em solid #fff;
-  white-space: nowrap;
-  animation: typing 3s steps(40, end) forwards,
-    blink-caret 0.75s step-end infinite;
-  width: 0;
+.floating-img.spacemode {
+  animation: floating 3s ease-in-out infinite;
 }
-
-@keyframes typing {
-  from {
-    width: 0;
-  }
-  to {
-    width: 100%;
-  }
-}
-@keyframes blink-caret {
-  from,
-  to {
-    border-color: transparent;
+@keyframes floating {
+  0%,
+  100% {
+    transform: translateY(0);
   }
   50% {
-    border-color: #fff;
+    transform: translateY(20px);
   }
-}
-
-@media screen {
 }
 </style>
