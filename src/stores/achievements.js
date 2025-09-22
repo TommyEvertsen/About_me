@@ -18,5 +18,6 @@ export function checkAllAchievements() {
 export function checkUnlockSpacemode() {
   if (allAchievementsUnlocked.value) {
     unlockSpacemode.value = true;
+    sessionStorage.setItem("spacemodeUnlocked", "true");
   }
 }
