@@ -10,10 +10,32 @@
   font-size: large;
 }
 
-@media (min-width: 2560px) {
-  .v-container {
-    max-width: 2200px !important;
-  }
+.paragraphText {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.fade-in {
+  animation: fadein 2s;
+}
+
+.fade-in-slow {
+  opacity: 0;
+  animation: fadeinslow 1s ease-in 1s forwards;
+}
+
+.fade-in-snail {
+  opacity: 0;
+  animation: fadeinsnail 1s ease-in 2s forwards;
+}
+
+.typewriter.spacemode {
+  overflow: hidden;
+  border-right: 0.15em solid #fff;
+  white-space: nowrap;
+  animation: typing 3s steps(40, end) forwards,
+    blink-caret 0.75s step-end infinite;
+  width: 0;
 }
 
 /* Alert */
@@ -360,5 +382,56 @@
   }
   100% {
     background-position: 100% 50%;
+  }
+}
+
+@keyframes fadein {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeinslow {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeinsnail {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+@keyframes blink-caret {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: #fff;
+  }
+}
+
+@media (min-width: 2560px) {
+  .v-container {
+    max-width: 2200px !important;
   }
 }

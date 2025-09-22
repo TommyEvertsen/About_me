@@ -115,11 +115,22 @@ import {
   checkUnlockSpacemode,
   unlockSpacemode,
 } from "@/stores/achievements";
-import { ref } from "vue";
+import { ref, onMounted } from "vue";
 import { checkAllAchievements } from "@/stores/achievements";
 import { spacemode } from "@/stores/spacemode";
 
-checkAllAchievements();
+onMounted(() => {
+  if (sessionStorage.getItem("hobbyUnlocked") === "true") {
+    hobbyUnlocked.value = true;
+  }
+  if (sessionStorage.getItem("animalUnlocked") === "true") {
+    animalUnlocked.value = true;
+  }
+  if (sessionStorage.getItem("secretButtonUnlocked") === "true") {
+    secretButtonUnlocked.value = true;
+  }
+  checkAllAchievements();
+});
 
 const alert = ref(false);
 

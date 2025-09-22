@@ -112,6 +112,14 @@ onMounted(() => {
   if (savedTheme && theme.global.name.value !== savedTheme) {
     theme.global.name.value = savedTheme;
   }
+
+  if (
+    sessionStorage.getItem("hobbyUnlocked") === "true" &&
+    sessionStorage.getItem("animalUnlocked") === "true" &&
+    sessionStorage.getItem("secretButtonUnlocked") === "true"
+  ) {
+    unlockSpacemode.value = true;
+  }
 });
 
 const show = () => {

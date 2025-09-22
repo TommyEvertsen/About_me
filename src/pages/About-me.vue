@@ -41,17 +41,17 @@
               </div>
 
               <div
-                class="text-body-2 mt-8 about-me-text"
+                class="mt-8 paragraphText aboutmeText"
                 :class="{ spacemode: spacemode }"
               >
-                <p style="font-size: large">My name is Tommy Evertsen.</p>
+                <p>My name is Tommy Evertsen.</p>
 
-                <p class="pt-5" style="font-size: large">
+                <p class="pt-5">
                   I am happily married and reside in Trondheim, where I enjoy a
                   vibrant and fulfilling life.
                 </p>
 
-                <p class="pt-5" style="font-size: large">
+                <p class="pt-5">
                   Outside of work, I have several hobbies that I am passionate
                   about. I love traveling and exploring new places, as I believe
                   that nothing broadens the mind like experiencing different
@@ -72,7 +72,7 @@
                 </p>
                 <br />
 
-                <p class="pt-5" style="font-size: large">
+                <p>
                   Lastly, I have a profound passion for programming and
                   continuously seek to expand my knowledge in this field. The
                   vast array of topics and technologies available for
@@ -82,7 +82,7 @@
                   enjoyment.
                 </p>
 
-                <p class="pt-5" style="font-size: large">
+                <p class="pt-5">
                   Other hobbies include: fishing, video games, boardgames,
                   creating videogames in Unity, skiing, and
                   <span>
@@ -102,7 +102,7 @@
                 </p>
                 <br />
 
-                <p class="mt-10" style="font-size: large">
+                <p class="mt-10">
                   I hope you have a wonderful
                   <span class="day">{{ day }}!</span>
                 </p>
@@ -213,7 +213,7 @@
 </template>
 
 <script setup>
-import { ref } from "vue";
+import { ref, onMounted } from "vue";
 import { useDisplay } from "vuetify";
 import { hobbyUnlocked } from "@/stores/achievements";
 import { spacemode } from "@/stores/spacemode";
@@ -221,8 +221,14 @@ import { spacemode } from "@/stores/spacemode";
 const alert = ref(false);
 
 function unlockHobby() {
-  hobbyUnlocked.value = true;
-  alert.value = true;
+  if (
+    !hobbyUnlocked.value &&
+    sessionStorage.getItem("hobbyUnlocked") !== "true"
+  ) {
+    hobbyUnlocked.value = true;
+    alert.value = true;
+    sessionStorage.setItem("hobbyUnlocked", "true");
+  }
 }
 
 const { smAndUp } = useDisplay();
@@ -239,11 +245,18 @@ const days = [
 ];
 const date = new Date();
 let day = days[date.getDay()];
+
+onMounted(() => {
+  if (sessionStorage.getItem("hobbyUnlocked") === "true") {
+    hobbyUnlocked.value = true;
+    alert.value = false;
+  }
+});
 </script>
 
 <style>
-.about-me-text {
-  line-height: 2em;
+.aboutmeText {
+  padding-right: 2rem;
 }
 
 @media screen and (max-width: 768px) {
@@ -251,8 +264,8 @@ let day = days[date.getDay()];
     margin-top: 0 !important;
   }
 
-  .headlineMe {
-    text-align: center;
+  .aboutmeText {
+    padding-right: unset !important;
   }
 }
 </style>

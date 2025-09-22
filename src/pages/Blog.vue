@@ -1,23 +1,38 @@
 <template>
   <main>
-    <v-container class="px-10 mt-10 mb-10">
+    <v-container class="mt-10 mb-10">
       <v-row>
-        <h1
-          class="headline"
-          :style="{
-            color: $vuetify.theme.current.colors.secondaryText,
-          }"
+        <v-col>
+          <h1
+            :style="{
+              color: $vuetify.theme.current.colors.secondaryText,
+            }"
+          >
+            Welcome to my blog
+          </h1>
+        </v-col>
+      </v-row>
+      <v-row>
+        <v-col
+          class="pr-16 blogText"
+          cols="12"
+          xl="6"
+          lg="6"
+          md="12"
+          sm="12"
+          xs="12"
         >
-          Welcome to my blog
-        </h1></v-row
-      >
-      <v-row>
-        <v-col class="pa-2" cols="12" xl="6" lg="6" md="12" sm="12" xs="12">
           <div v-if="currentBlogPost" class="mt-10">
-            <h2 class="mt-7">{{ currentBlogPost.title }}</h2>
+            <h2
+              v-if="showTitle"
+              class="mt-7 typewriter"
+              :class="{ spacemode: spacemode }"
+            >
+              {{ currentBlogPost.title }}
+            </h2>
             <p class="mt-2">{{ currentBlogPost.date }}</p>
             <div v-for="paragraph in currentBlogPost.content" :key="paragraph">
-              <p class="mt-6" style="font-size: large">{{ paragraph }}</p>
+              <p class="mt-6 paragraphText">{{ paragraph }}</p>
             </div>
           </div>
         </v-col>
@@ -59,10 +74,11 @@ import { ref, computed, watch } from "vue";
 import creative from "@/assets/creative.jpg";
 import programming from "@/assets/programming.jpg";
 import porks from "@/assets/porks.jpg";
+import { spacemode } from "@/stores/spacemode";
 
 const blogPosts = [
   {
-    title: "My first post",
+    title: "My first blogpost.",
     date: "25.03.2025",
     image: porks,
     content: [
@@ -104,9 +120,14 @@ const blogPosts = [
 ];
 
 const page = ref(1);
+const showTitle = ref(true);
 
 watch(page, () => {
+  showTitle.value = false;
   window.scrollTo({ top: 0, behavior: "smooth" });
+  setTimeout(() => {
+    showTitle.value = true;
+  }, 50);
 });
 
 const currentBlogPost = computed(() => {
@@ -115,50 +136,9 @@ const currentBlogPost = computed(() => {
 </script>
 
 <style>
-.fade-in {
-  animation: fadein 2s;
-}
-
-.fade-in-slow {
-  opacity: 0;
-  animation: fadeinslow 1s ease-in 1s forwards;
-}
-
-.fade-in-snail {
-  opacity: 0;
-  animation: fadeinsnail 1s ease-in 2s forwards;
-}
-
-@keyframes fadein {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-@keyframes fadeinslow {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-@keyframes fadeinsnail {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
 @media screen and (max-width: 768px) {
-  .headline {
-    text-align: center;
+  .blogText {
+    padding-right: unset !important;
   }
 }
 
