@@ -114,6 +114,7 @@ import fireAndFlesh from "@/assets/images/fire2.jpg";
 import dragon from "@/assets/images/Dragon.jpg";
 import warehouse from "@/assets/warehouse.jpg";
 import { spacemode } from "@/stores/spacemode";
+import portopru from "@/assets/pruport2.jpg";
 
 const hobbyProjects = [
   {
@@ -134,7 +135,7 @@ const hobbyProjects = [
     published: false,
     image: warehouse,
     link: "",
-    code: "https://github.com/TommyEvertsen/Portofolio",
+    code: "https://github.com/TommyEvertsen/Warehouse_system",
   },
   {
     title: "Fire and flesh",
@@ -145,6 +146,16 @@ const hobbyProjects = [
     image: fireAndFlesh,
     link: "",
     code: "https://github.com/TommyEvertsen/FireandFlesh-sharing-recipes-",
+  },
+  {
+    title: "Portofolio Pru",
+    description:
+      "Portofoilo for my wife created with similar technology as this portofolio. Code my me and design by my wife.",
+    tech: "Vue.js, Vuetify",
+    published: true,
+    image: portopru,
+    link: "https://tommyevertsen.github.io/Portofolio-Pru",
+    code: "https://github.com/TommyEvertsen/Portofolio-Pru",
   },
 
   {
