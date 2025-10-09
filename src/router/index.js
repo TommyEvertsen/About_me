@@ -9,6 +9,7 @@ import VideoGames from "@/pages/VideoGames.vue";
 import Blog from "@/pages/Blog.vue";
 import { createRouter, createWebHistory } from "vue-router";
 import Achievements from "@/pages/Achievements.vue";
+import NewHome from "@/pages/NewHome.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -23,6 +24,14 @@ const router = createRouter({
       component: Home,
       meta: {
         title: "Home",
+      },
+    },
+    {
+      path: "/newHome",
+      name: "newHome",
+      component: NewHome,
+      meta: {
+        title: "NewHome",
       },
     },
     {

@@ -34,6 +34,10 @@
             :class="{ spacemode: spacemode }"
             ><v-img
               :class="{ spacemode: spacemode }"
+              :style="{
+                backgroundColor:
+                  $vuetify.theme.current.colors.secondaryCardBackground,
+              }"
               class="align-end text-white certificateImages"
               width="100%"
               height="350"
@@ -177,6 +181,7 @@ import udemy from "@/assets/udemy.jpg";
 import duke from "@/assets/images/duke.jpg";
 import ucdavis from "@/assets/images/ucdavis.jpg";
 import apexcertif from "@/assets/apex.jpg";
+import scrum from "@/assets/scrum.jpg";
 import { spacemode } from "@/stores/spacemode";
 
 const certificates = [
@@ -218,6 +223,27 @@ const certificates = [
     image: fundamentals,
   },
   {
+    title: "Scrum fundamentals",
+    provider: "Scrumstudy",
+    icon: "mdi-alpha-s-box-outline",
+    icon2: "mdi-check",
+    subtitle: "Fundamental knowledge of SCRUM framework ",
+    link: "https://www.scrumstudy.com/certification/verify?type=SFC&number=1113483",
+    skills: [
+      {
+        title: "SCRUM",
+        color: "#008ad7",
+        text: "#ffffff",
+      },
+      {
+        title: "Agile",
+        color: "#008ad7",
+        text: "#ffffff",
+      },
+    ],
+    image: scrum,
+  },
+  {
     title: "Oracle Application Express Workshop",
     provider: "Glasspaper",
     icon: "mdi-alpha-g-box-outline",
@@ -252,7 +278,7 @@ const certificates = [
   {
     title: "Web development bootcamp",
     provider: "Udemy",
-    icon: "mdi-alpha-u-circle-outline",
+    icon: "mdi-alpha-u-box-outline",
     icon2: "mdi-check",
     subtitle: "Bootcamp with Javascript and React",
     link: "https://www.udemy.com/certificate/UC-001a5901-bd56-4f6c-b456-2d5bbd07d298/",
