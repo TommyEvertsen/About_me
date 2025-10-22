@@ -2,7 +2,7 @@
   <main>
     <v-container class="px-10 mt-10 mb-10">
       <v-row>
-        <v-col class="pa-2" cols="12" lg="6" md="12" sm="12" xs="12">
+        <v-col class="pa-2" cols="12" xl="6" lg="5" md="12" sm="12" xs="12">
           <v-sheet
             max-width="800"
             width="100%"
@@ -110,8 +110,16 @@
             </div>
           </v-sheet>
         </v-col>
-        <v-col class="pa-2" cols="12" lg="6" md="12" sm="12" xs="12">
-          <v-carousel v-if="smAndUp" height="600" cycle continuous touch>
+        <v-col class="pa-2" cols="12" xl="6" lg="7" md="12" sm="12" xs="12">
+          <v-carousel
+            v-if="smAndUp"
+            height="600"
+            cycle
+            interval="4000"
+            continuous
+            touch
+            show-arrows="hover"
+          >
             <v-carousel-item
               src="@/assets/onthehand.jpg"
               cover
@@ -168,7 +176,7 @@
           >
             <v-carousel-item
               src="@/assets/images/cabin.jpg"
-              cover=""
+              cover
             ></v-carousel-item>
 
             <v-carousel-item
@@ -260,10 +268,6 @@ onMounted(() => {
 }
 
 @media screen and (max-width: 768px) {
-  .coding_journey {
-    margin-top: 0 !important;
-  }
-
   .aboutmeText {
     padding-right: unset !important;
   }
