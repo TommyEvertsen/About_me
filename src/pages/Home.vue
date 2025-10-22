@@ -24,9 +24,11 @@
               I am a web and game developer with a passion for both fields.
               <br />
               <br />
-              Professionally, I work as a full-stack developer, where I have
-              developed websites and applications for a diverse range of
-              clients. In my spare time, I create video games using C# and
+              Professionally, I work as a full-stack developer, creating
+              tailored solutions for researchers. My work enables them to
+              efficiently collect and store data while conducting fieldwork in
+              nature, and to manage, edit, and analyze their findings once back
+              in the office. In my spare time, I create video games using C# and
               Unity. Additionally, I have studied Microsoft Azure extensively
               and hold two certifications: Azure Fundamentals and Azure
               Developer Associate, as I firmly believe that the future of
@@ -72,23 +74,17 @@
           </v-sheet>
         </v-col>
 
-        <v-col
-          cols="12"
-          xl="7"
-          lg="7"
-          md="12"
-          sm="12"
-          xs="12"
-          class="mt-10 imageContainer"
-        >
-          <v-img
-            :src="tommy"
-            max-height="700"
-            max-width="500"
-            class="profileImage"
-            :class="{ spacemode: spacemode }"
-          >
-          </v-img>
+        <v-col cols="12" xl="7" lg="7" md="12" sm="12" xs="12" class="mt-10">
+          <div class="imageContainer">
+            <v-img
+              :src="tommyCut"
+              max-height="600"
+              max-width="600"
+              class="profileImage"
+              :class="{ spacemode: spacemode }"
+            >
+            </v-img>
+          </div>
         </v-col>
       </v-row>
     </v-container>
@@ -96,64 +92,45 @@
 </template>
 
 <script setup>
-import { useRouter } from "vue-router";
 import { spacemode } from "@/stores/spacemode";
-
-import { ref } from "vue";
-const loaded = ref(false);
-
-import tommy from "@/assets/images/tommyMosq.jpg";
-
-const router = useRouter();
+import tommyCut from "@/assets/images/Designer.png";
 
 const technologies = [
   {
     title: "Javascript",
-    color: "#F9E79F",
   },
   {
     title: "PHP",
-    color: "#7377ad",
   },
   {
     title: "C#",
-    color: "#BB8FCE",
   },
   {
     title: "Laravel",
-    color: "#E74C3C ",
   },
   {
     title: "Vue.js",
-    color: "#52BE80 ",
   },
   {
     title: "Unity",
-    color: "#BFC9CA",
   },
   {
     title: "Tailwind",
-    color: "#5DADE2",
   },
   {
     title: "HTML",
-    color: "#E74C3C",
   },
   {
     title: "CSS",
-    color: "#73C6B6",
   },
   {
     title: "Azure",
-    color: "#85C1E9 ",
   },
   {
     title: "SQL",
-    color: "#85C1E9 ",
   },
   {
     title: "Oracle apex",
-    color: "#85C1E9 ",
   },
   {
     title: "Java",
@@ -166,11 +143,22 @@ const technologies = [
 
 <style>
 .imageContainer {
+  position: relative;
   display: flex;
-  justify-content: center;
-  justify-items: center;
-  align-items: center;
+  justify-content: end;
+  align-items: start;
 }
+
+/* .imageContainer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: #5b8fb9;
+  overflow: hidden;
+} */
 
 .profileImage {
   position: relative;
@@ -180,6 +168,10 @@ const technologies = [
 @media screen and (max-width: 768px) {
   .centerHome {
     text-align: center;
+  }
+
+  .imageContainer {
+    justify-content: center;
   }
 }
 
