@@ -113,7 +113,7 @@
         <v-col class="pa-2" cols="12" xl="6" lg="7" md="12" sm="12" xs="12">
           <v-carousel
             v-if="smAndUp"
-            height="600"
+            height="700"
             cycle
             interval="4000"
             continuous
