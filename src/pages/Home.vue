@@ -145,7 +145,7 @@ const technologies = [
 .imageContainer {
   position: relative;
   display: flex;
-  justify-content: end;
+  justify-content: center;
   align-items: start;
 }
 
