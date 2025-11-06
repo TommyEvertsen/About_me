@@ -428,14 +428,14 @@
   }
 }
 
-@media (min-width: 2560px) {
-  .v-container {
-    max-width: 2200px !important;
-  }
-}
-
 @media (min-width: 1920px) {
   .v-container {
     max-width: 1530px !important;
+  }
+}
+
+@media (min-width: 2560px) {
+  .v-container {
+    max-width: 2200px !important;
   }
 }
