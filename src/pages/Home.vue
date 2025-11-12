@@ -3,11 +3,7 @@
     <v-container class="px-10 mb-10">
       <v-row>
         <v-col cols="12" xl="5" lg="5" md="12" sm="12" xs="12" class="mt-10">
-          <v-sheet
-            :style="{
-              backgroundColor: $vuetify.theme.current.colors.mainBackground,
-            }"
-          >
+          <div>
             <h3 class="fade-in center-home">Hi there i'm</h3>
             <h1
               class="mt-2 fade-in-slow"
@@ -71,7 +67,7 @@
             >
               Contact me</v-btn
             >
-          </v-sheet>
+          </div>
         </v-col>
 
         <v-col cols="12" xl="7" lg="7" md="12" sm="12" xs="12" class="mt-10">

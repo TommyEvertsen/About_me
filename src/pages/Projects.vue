@@ -115,12 +115,13 @@ import dragon from "@/assets/images/Dragon.jpg";
 import warehouse from "@/assets/warehouse.jpg";
 import { spacemode } from "@/stores/spacemode";
 import portopru from "@/assets/pruport2.jpg";
+import pruSmall from "@/assets/images/pruSmall.jpg";
 
 const hobbyProjects = [
   {
     title: "Dragon hero",
     description:
-      "I recently began working on a Unity game as a hobby project. It involves using C# and the Unity engine, and has been a fun and engaging experience so far.",
+      "I recently began working on a Unity game as a hobby project. It involves using C# and the Unity engine.",
     tech: "C# and Unity",
     published: true,
     image: dragon,
@@ -153,7 +154,7 @@ const hobbyProjects = [
       "Portofoilo for my wife created with similar technology as this portofolio. Code my me and design by my wife.",
     tech: "Vue.js, Vuetify",
     published: true,
-    image: portopru,
+    image: pruSmall,
     link: "https://tommyevertsen.github.io/Portofolio-Pru",
     code: "https://github.com/TommyEvertsen/Portofolio-Pru",
   },

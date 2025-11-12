@@ -3,13 +3,10 @@
     <v-container class="px-10 mt-10 mb-10">
       <v-row>
         <v-col class="pa-2" cols="12" xl="6" lg="5" md="12" sm="12" xs="12">
-          <v-sheet
+          <div
             max-width="800"
             width="100%"
             rounded
-            :style="{
-              backgroundColor: $vuetify.theme.current.colors.mainBackground,
-            }"
             class="textContainer"
             :class="{ spacemode: spacemode }"
           >
@@ -108,7 +105,7 @@
                 </p>
               </div>
             </div>
-          </v-sheet>
+          </div>
         </v-col>
         <v-col class="pa-2" cols="12" xl="6" lg="7" md="12" sm="12" xs="12">
           <v-carousel
