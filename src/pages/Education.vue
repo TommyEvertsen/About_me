@@ -70,7 +70,7 @@
       <TimeLine v-if="smAndUp" />
       <TimeLineMobile v-if="smAndDown" />
 
-      <div class="secretDuck flex justify-end">
+      <div v-if="animalVisible" class="secretDuck flex justify-end">
         <v-icon color="secondaryText" icon="mdi-duck" @click="unlockAnimal">
         </v-icon>
       </div>
@@ -91,19 +91,25 @@ const { smAndUp } = useDisplay();
 const { smAndDown } = useDisplay();
 
 const alert = ref(false);
+const animalVisible = ref(true);
 
 function unlockAnimal() {
-  if (!animalUnlocked.value && sessionStorage.getItem('animalUnlocked') !== 'true') {
+  if (
+    !animalUnlocked.value &&
+    sessionStorage.getItem("animalUnlocked") !== "true"
+  ) {
     animalUnlocked.value = true;
     alert.value = true;
-    sessionStorage.setItem('animalUnlocked', 'true');
+    animalVisible.value = false;
+    sessionStorage.setItem("animalUnlocked", "true");
   }
 }
 
 onMounted(() => {
-  if (sessionStorage.getItem('animalUnlocked') === 'true') {
+  if (sessionStorage.getItem("animalUnlocked") === "true") {
     animalUnlocked.value = true;
     alert.value = false;
+    animalVisible.value = false;
   }
 });
 </script>

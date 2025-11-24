@@ -151,7 +151,7 @@ const hobbyProjects = [
   {
     title: "Portofolio Pru",
     description:
-      "Portofoilo for my wife created with similar technology as this portofolio. Code my me and design by my wife.",
+      "Portofoilo for my wife created with similar technology as this portofolio. Code by me and design by my wife.",
     tech: "Vue.js, Vuetify",
     published: true,
     image: pruSmall,
