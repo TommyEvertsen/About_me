@@ -168,7 +168,7 @@ const achievements = [
     title: "Find the secret button",
     icon: "mdi-trophy-variant",
     description: "Congratulations on finding the secret button!",
-    hint: "Hint: Hover in thin air",
+    hint: "Hint: Contact me page has a secret button",
     unlocked: secretButtonUnlocked,
   },
 ];
