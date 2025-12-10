@@ -182,6 +182,12 @@ const navigateToAchievements = () => {
   });
 };
 
+const navigateToWorkExperience = () => {
+  router.push({ name: "workExperience" }).then(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+};
+
 const mainlinks = [
   {
     title: "Home",
@@ -206,6 +212,12 @@ const mainlinks = [
     icon: "mdi-school-outline",
     value: "education",
     click: navigateToEducation,
+  },
+  {
+    title: "Work experience",
+    icon: "mdi-card-account-details-outline",
+    value: "workExperience",
+    click: navigateToWorkExperience,
   },
 ];
 
