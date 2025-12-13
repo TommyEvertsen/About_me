@@ -1,6 +1,6 @@
 <template>
   <main>
-    <v-container class="mt-10 mb-10">
+    <v-container class="px-10 mt-10 mb-10">
       <v-row>
         <v-col>
           <h1
