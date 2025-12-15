@@ -75,6 +75,19 @@
       <v-divider></v-divider>
 
       <v-list-item
+        v-for="link in funLinks"
+        :key="link.title"
+        :disabled="link.disabled"
+        :prepend-icon="link.icon"
+        :title="link.title"
+        :value="link.value"
+        @click="link.click"
+        :active="$route.name === link.value"
+      ></v-list-item>
+
+      <v-divider></v-divider>
+
+      <v-list-item
         v-for="link in otherLinks"
         :key="link.title"
         :disabled="link.disabled"
@@ -240,6 +253,21 @@ const subLinks = [
     value: "Game development",
     click: navigateToGames,
   }, */
+  /* {
+    title: "Blog",
+    icon: "mdi-head-dots-horizontal-outline",
+    value: "blog",
+    click: navigateToBlog,
+  },
+  {
+    title: "Achievements",
+    icon: "mdi-trophy-outline",
+    value: "achievements",
+    click: navigateToAchievements,
+  }, */
+];
+
+const funLinks = [
   {
     title: "Blog",
     icon: "mdi-head-dots-horizontal-outline",

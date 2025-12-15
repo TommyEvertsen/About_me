@@ -79,6 +79,12 @@ const navigateToBlog = () => {
   });
 };
 
+const navigateToWorkExperience = () => {
+  router.push({ name: "workExperience" }).then(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+};
+
 const links = [
   {
     title: "Home",
@@ -99,6 +105,11 @@ const links = [
     title: "Education",
     icon: "mdi-school-outline",
     click: navigateToEducation,
+  },
+  {
+    title: "Work Experience",
+    icon: "mdi-card-account-details-outline",
+    click: navigateToWorkExperience,
   },
   {
     title: "Projects",
