@@ -35,13 +35,13 @@
           </div>
         </v-col>
         <v-col cols="12" xl="6" lg="6" md="12" sm="12" xs="12">
-          <v-img
+          <!--  <v-img
             src="@/assets/images/dragon.jpg"
             class="rounded-lg mt-10"
             max-height="500"
             max-width="800"
           >
-          </v-img>
+          </v-img> -->
         </v-col>
       </v-row>
     </v-container>

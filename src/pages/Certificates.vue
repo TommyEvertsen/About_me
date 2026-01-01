@@ -173,15 +173,15 @@
 
 <script setup>
 import { ref } from "vue";
-import fundamentals from "@/assets/fundamentals.jpg";
-import developerAccociate from "@/assets/developerAssociate.jpg";
-import mosh from "@/assets/mosh.jpg";
-import c from "@/assets/c.jpg";
-import udemy from "@/assets/udemy.jpg";
-import duke from "@/assets/images/duke.jpg";
-import ucdavis from "@/assets/images/ucdavis.jpg";
-import apexcertif from "@/assets/apex.jpg";
-import scrum from "@/assets/scrum.jpg";
+import fundamentals from "@/assets/images/certificates/fundamentals.jpg";
+import developerAccociate from "@/assets/images/certificates/developerAssociate.jpg";
+import mosh from "@/assets/images/certificates/mosh.jpg";
+import c from "@/assets/images/certificates/c.jpg";
+import udemy from "@/assets/images/certificates/udemy.jpg";
+import duke from "@/assets/images/certificates/duke.jpg";
+import ucdavis from "@/assets/images/certificates/ucdavis.jpg";
+import apexcertif from "@/assets/images/certificates/apex.jpg";
+import scrum from "@/assets/images/certificates/scrum.jpg";
 import { spacemode } from "@/stores/spacemode";
 
 const certificates = [
@@ -344,7 +344,7 @@ const certificates = [
         text: "#ffffff",
       },
     ],
-    image: duke,
+    image: ucdavis,
   },
   {
     title: "Programming foundations",
@@ -368,7 +368,7 @@ const certificates = [
         text: "#ffffff",
       },
     ],
-    image: ucdavis,
+    image: duke,
   },
 ];
 

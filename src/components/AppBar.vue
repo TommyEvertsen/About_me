@@ -38,7 +38,7 @@
   <v-navigation-drawer width="220" v-if="drawer" v-model="drawer">
     <v-list>
       <v-list-item
-        prepend-avatar="@/assets/images/tommyAvatar.jpg"
+        prepend-avatar="@/assets/images/profile/tommyAvatar.jpg"
         class="me"
         subtitle="Fullstack developer"
         title="Tommy Evertsen"

@@ -89,7 +89,7 @@
 
 <script setup>
 import { spacemode } from "@/stores/spacemode";
-import tommyCut from "@/assets/images/Designer.png";
+import tommyCut from "@/assets/images/profile/Designer.png";
 
 const technologies = [
   {

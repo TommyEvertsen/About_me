@@ -71,9 +71,10 @@
 
 <script setup>
 import { ref, computed, watch } from "vue";
-import creative from "@/assets/creative.jpg";
-import programming from "@/assets/programming.jpg";
-import porks from "@/assets/porks.jpg";
+import creative from "@/assets/images/blogImages/creative.jpg";
+import programming from "@/assets/images/blogImages/programming.jpg";
+import porks from "@/assets/images/blogImages/porks.jpg";
+import wife from "@/assets/images/blogImages/wife.JPG";
 import { spacemode } from "@/stores/spacemode";
 
 const blogPosts = [
@@ -115,6 +116,20 @@ const blogPosts = [
       "Even though the course was very difficult, I loved it. When I started with the basics, it was also enjoyable, and I realized it was much easier than I initially thought. I completed several programming courses and pursued further education at the University of California.",
       "If I could do it all over again, I would focus on learning one language thoroughly rather than trying to learn them all. Once you know one language well, the others are quite similar and easier to learn.",
       "Now, I feel very fulfilled at work, doing something fun, creative, and challenging. Learning programming has been one of the best decisions of my life, and I look forward to continuing this journey for many years to come.",
+    ],
+  },
+  {
+    title: "Tribute to my wife",
+    date: "31.12.2025",
+    image: wife,
+    content: [
+      "As 2025 comes to a close, I want to pay homage to my wife.",
+      "First and foremost, thank you for always staying by my side. Every challenge I face, I have a partner who helps me tackle it. You’ve been my cheerleader, lifting me up when things get tough. Having your support means the world to me.",
+      "I’m also grateful for the greatest gift you’ve given us—our child, whom I love dearly. Transitioning from being single to becoming a family man has been an incredible experience. It wasn’t easy at first, with our child being born prematurely and a long hospital stay, but everything turned out fine. Now, every day is a joy as we watch our child grow and learn new skills. It’s truly a blessing.",
+      "You’ve pushed me out of my comfort zone and encouraged me to embrace new and exciting challenges. You were the one who inspired me to pursue my dream of becoming a developer. While I saw obstacles, you saw possibilities and guided me in the right direction. Thanks to you, I now enjoy going to work every day.",
+      "Right now, I’m sitting here in Saigon on parental leave, reflecting on how much I’ve enjoyed this experience. It was your idea to spend this time here, once again pushing me to try something new and exciting. That’s why I felt compelled to dedicate this blog post to you as a thank you for everything.",
+      "Life is full of excitement, happiness, challenges, and even sadness—but everything is easier when you have someone to share it with. We make each other stronger, providing backup when the batteries run low and sharing the thrill when a new adventure begins. Everything is better together, and I look forward to our future, whatever it may bring.",
+      "Thank you for being my wife, my inspiration, and my greatest supporter.",
     ],
   },
 ];

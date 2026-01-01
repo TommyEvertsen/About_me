@@ -107,15 +107,14 @@
 </template>
 
 <script setup>
-import tinyImage from "@/assets/tiny.jpg";
-import portoImage from "@/assets/portofolio.jpg";
-import universe from "@/assets/universe.jpg";
-import fireAndFlesh from "@/assets/images/fire2.jpg";
-import dragon from "@/assets/images/Dragon.jpg";
-import warehouse from "@/assets/warehouse.jpg";
+import tinyImage from "@/assets/images/projects/tiny.jpg";
+import portoImage from "@/assets/images/projects/portofolio.jpg";
+import universe from "@/assets/images/projects/universe.jpg";
+import fireAndFlesh from "@/assets/images/projects/fire2.jpg";
+import dragon from "@/assets/images/projects/Dragon.jpg";
+import warehouse from "@/assets/images/projects/warehouse.jpg";
+import pruSmall from "@/assets/images/projects/pruSmall.jpg";
 import { spacemode } from "@/stores/spacemode";
-import portopru from "@/assets/pruport2.jpg";
-import pruSmall from "@/assets/images/pruSmall.jpg";
 
 const hobbyProjects = [
   {

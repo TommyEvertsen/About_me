@@ -64,10 +64,10 @@
         </v-col>
         <v-col class="pa-2">
           <v-img
-            src="@/assets/images/tommyAvatar.jpg"
+            :src="contactPhoto"
             class="rounded-lg mx-auto floating-img"
             :class="{ spacemode: spacemode }"
-            max-height="500"
+            max-height="600"
             max-width="900"
           >
           </v-img>
@@ -106,6 +106,7 @@
 import { ref, onMounted } from "vue";
 import { secretButtonUnlocked } from "@/stores/achievements";
 import { spacemode } from "@/stores/spacemode";
+import contactPhoto from "@/assets/images/profile/Tommy111.png";
 
 const currentTime = ref("");
 const currentActivity = ref("");
@@ -140,16 +141,19 @@ const add = addTime;
 const alert = ref(false);
 
 function handleSecretButton() {
-  if (!secretButtonUnlocked.value && sessionStorage.getItem('secretButtonUnlocked') !== 'true') {
+  if (
+    !secretButtonUnlocked.value &&
+    sessionStorage.getItem("secretButtonUnlocked") !== "true"
+  ) {
     secretButtonVisible.value = false;
     secretButtonUnlocked.value = true;
     alert.value = true;
-    sessionStorage.setItem('secretButtonUnlocked', 'true');
+    sessionStorage.setItem("secretButtonUnlocked", "true");
   }
 }
 
 onMounted(() => {
-  if (sessionStorage.getItem('secretButtonUnlocked') === 'true') {
+  if (sessionStorage.getItem("secretButtonUnlocked") === "true") {
     secretButtonUnlocked.value = true;
     secretButtonVisible.value = false;
     alert.value = false;

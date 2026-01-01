@@ -18,10 +18,7 @@
   </main>
 </template>
 
-<script setup>
-import paper from "@/assets/paper.jpg";
-import tommy from "@/assets/images/tommyAvatar.jpg";
-</script>
+<script setup></script>
 
 <style scoped>
 .background {
