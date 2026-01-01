@@ -19,9 +19,15 @@
         :key="jobExperience.company"
       >
         <v-col cols="12" xl="6" lg="6" md="6" sm="12" xs="12" class="mt-10">
-          <h2>{{ jobExperience.company }}</h2>
-          <p class="jobRole">{{ jobExperience.role }}</p>
-          <p>{{ jobExperience.date }}</p>
+          <h2 class="jobRole pop-outin" :class="{ spacemode: spacemode }">
+            {{ jobExperience.company }}
+          </h2>
+          <p class="jobRole pop-outin" :class="{ spacemode: spacemode }">
+            {{ jobExperience.role }}
+          </p>
+          <p class="pop-outin" :class="{ spacemode: spacemode }">
+            {{ jobExperience.date }}
+          </p>
 
           <div v-if="jobExperience.technologies" class="technologySection mt-4">
             <p class="sectionHeadline">Technologies used:</p>
@@ -96,6 +102,8 @@
 </template>
 
 <script setup>
+import { spacemode } from "@/stores/spacemode";
+
 const jobExperiences = [
   {
     company: "Norges geologiske undersøkelse (NGU)",
@@ -320,6 +328,29 @@ const jobExperiences = [
 
   .projectColumn {
     margin-top: 0 !important;
+  }
+}
+
+.pop-outin.spacemode {
+  animation: 8s anim-popoutin ease-out;
+}
+
+@keyframes anim-popoutin {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  25% {
+    transform: scale(1.1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
   }
 }
 </style>

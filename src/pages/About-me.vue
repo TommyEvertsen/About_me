@@ -118,47 +118,47 @@
             show-arrows="hover"
           >
             <v-carousel-item
-              src="@/assets/onthehand.jpg"
+              src="@/assets/images/carousel/onthehand.jpg"
               cover
             ></v-carousel-item>
 
             <v-carousel-item
-              src="@/assets/images/cabin.jpg"
+              src="@/assets/images/carousel/cabin.jpg"
               cover
             ></v-carousel-item>
 
             <v-carousel-item
-              src="@/assets/images/castle.jpg"
+              src="@/assets/images/carousel/castle.jpg"
               cover
             ></v-carousel-item>
 
             <v-carousel-item
-              src="@/assets/images/buffalo.jpg"
+              src="@/assets/images/carousel/buffalo.jpg"
               cover
             ></v-carousel-item>
 
             <v-carousel-item
-              src="@/assets/images/cactisforest.jpg"
+              src="@/assets/images/carousel/cactisforest.jpg"
               cover
             ></v-carousel-item>
 
             <v-carousel-item
-              src="@/assets/images/camping.jpg"
+              src="@/assets/images/carousel/camping.jpg"
               cover
             ></v-carousel-item>
 
             <v-carousel-item
-              src="@/assets/images/tree.jpg"
+              src="@/assets/images/carousel/tree.jpg"
               cover
             ></v-carousel-item>
 
             <v-carousel-item
-              src="@/assets/images/tekken.jpg"
+              src="@/assets/images/carousel/tekken.jpg"
               cover
             ></v-carousel-item>
 
             <v-carousel-item
-              src="@/assets/images/reefs.jpg"
+              src="@/assets/images/carousel/reefs.jpg"
               cover
             ></v-carousel-item>
           </v-carousel>
@@ -172,42 +172,42 @@
             :show-arrows="false"
           >
             <v-carousel-item
-              src="@/assets/images/cabin.jpg"
+              src="@/assets/images/carousel/cabin.jpg"
               cover
             ></v-carousel-item>
 
             <v-carousel-item
-              src="@/assets/images/castle.jpg"
+              src="@/assets/images/carousel/castle.jpg"
               cover
             ></v-carousel-item>
 
             <v-carousel-item
-              src="@/assets/images/buffalo.jpg"
+              src="@/assets/images/carousel/buffalo.jpg"
               cover
             ></v-carousel-item>
 
             <v-carousel-item
-              src="@/assets/images/cactisforest.jpg"
+              src="@/assets/images/carousel/cactisforest.jpg"
               cover
             ></v-carousel-item>
 
             <v-carousel-item
-              src="@/assets/images/camping.jpg"
+              src="@/assets/images/carousel/camping.jpg"
               cover
             ></v-carousel-item>
 
             <v-carousel-item
-              src="@/assets/images/tree.jpg"
+              src="@/assets/images/carousel/tree.jpg"
               cover
             ></v-carousel-item>
 
             <v-carousel-item
-              src="@/assets/images/tekken.jpg"
+              src="@/assets/images/carousel/tekken.jpg"
               cover
             ></v-carousel-item>
 
             <v-carousel-item
-              src="@/assets/images/reefs.jpg"
+              src="@/assets/images/carousel/reefs.jpg"
               cover
             ></v-carousel-item>
           </v-carousel>

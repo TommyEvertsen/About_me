@@ -79,7 +79,7 @@
 </template>
 
 <script setup>
-import diploma from "@/assets/images/diploma.jpg";
+import diploma from "@/assets/images/education/diploma.jpg";
 import TimeLine from "@/components/TimeLine.vue";
 import TimeLineMobile from "@/components/TimeLineMobile.vue";
 import { useDisplay } from "vuetify";
