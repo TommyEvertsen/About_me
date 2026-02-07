@@ -114,6 +114,7 @@ import fireAndFlesh from "@/assets/images/projects/fire2.jpg";
 import dragon from "@/assets/images/projects/Dragon.jpg";
 import warehouse from "@/assets/images/projects/warehouse.jpg";
 import pruSmall from "@/assets/images/projects/pruSmall.jpg";
+import videogameLibrary from "@/assets/images/projects/videogameLibrary.jpg";
 import { spacemode } from "@/stores/spacemode";
 
 const hobbyProjects = [
@@ -126,6 +127,16 @@ const hobbyProjects = [
     image: dragon,
     link: "https://play.unity.com/en/games/fe0fbeae-9381-4518-83c0-377a728f5a2a/build",
     code: "",
+  },
+  {
+    title: "Videogame library",
+    description:
+      "I have started on a project using API to search for videogame information",
+    tech: "Next.js and React",
+    published: true,
+    image: videogameLibrary,
+    link: "https://games-library-bice.vercel.app/",
+    code: "https://github.com/TommyEvertsen/Games_library",
   },
   {
     title: "Tommy's lagersytem",
