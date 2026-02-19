@@ -20,13 +20,7 @@
           sm="12"
           xs="12"
         >
-          <v-card
-            hover
-            color="#f5f5f5"
-            class="mx-auto"
-            max-width="550"
-            rounded="lg"
-          >
+          <v-card hover color="#f5f5f5" class="mx-auto" rounded="lg">
             <v-card-title
               style="background-color: #301e67; color: white"
               :class="{ spacemode: spacemode }"
