@@ -14,8 +14,8 @@
           v-for="project in hobbyProjects"
           :key="project.title"
           cols="12"
-          xl="4"
-          lg="4"
+          xl="6"
+          lg="6"
           md="6"
           sm="12"
           xs="12"
@@ -115,6 +115,7 @@ import dragon from "@/assets/images/projects/Dragon.jpg";
 import warehouse from "@/assets/images/projects/warehouse.jpg";
 import pruSmall from "@/assets/images/projects/pruSmall.jpg";
 import videogameLibrary from "@/assets/images/projects/videogameLibrary.jpg";
+import travelmap from "@/assets/images/projects/travelmap.jpg";
 import { spacemode } from "@/stores/spacemode";
 
 const hobbyProjects = [
@@ -131,12 +132,22 @@ const hobbyProjects = [
   {
     title: "Videogame library",
     description:
-      "I have started on a project using API to search for videogame information",
+      "A video game library application where you can search and discover games using external APIs. Built to explore game data.",
     tech: "Next.js and React",
     published: true,
     image: videogameLibrary,
     link: "https://games-library-bice.vercel.app/",
     code: "https://github.com/TommyEvertsen/Games_library",
+  },
+  {
+    title: "Travel map",
+    description:
+      "Visualize and track the percentage of the world you have explored through your travels",
+    tech: "Next.js, React and Openlayers",
+    published: true,
+    image: travelmap,
+    link: "https://travel-map-pink-zeta.vercel.app/",
+    code: "https://github.com/TommyEvertsen/travel_map",
   },
   {
     title: "Tommy's lagersytem",
