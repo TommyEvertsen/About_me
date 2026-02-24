@@ -116,7 +116,7 @@ const hobbyProjects = [
   {
     title: "Dragon hero",
     description:
-      "I recently began working on a Unity game as a hobby project. It involves using C# and the Unity engine.",
+      "I recently began working on a Unity game as a hobby project. It involves using C# and the Unity engine to develop a videogame",
     tech: "C# and Unity",
     published: true,
     image: dragon,
@@ -136,7 +136,7 @@ const hobbyProjects = [
   {
     title: "Travel map",
     description:
-      "Visualize and track the percentage of the world you have explored through your travels",
+      "Visualize and track the percentage of the world you have explored through your travels. How many precentage do you have?",
     tech: "Next.js, React and Openlayers",
     published: true,
     image: travelmap,
@@ -156,7 +156,7 @@ const hobbyProjects = [
   {
     title: "Fire and flesh",
     description:
-      "I created a recipe-sharing website, now offline due to costs. It was a fun CRUD project where I learned a lot.",
+      "I created a recipe-sharing website, now offline due to costs. It was a fun CRUD project where I learned a lot about laravels ORM.",
     tech: "Laravel and Vue",
     published: false,
     image: fireAndFlesh,
@@ -166,7 +166,7 @@ const hobbyProjects = [
   {
     title: "Portofolio Pru",
     description:
-      "Portofoilo for my wife created with similar technology as this portofolio. Code by me and design by my wife.",
+      "Portofoilo for my wife created with similar technology as this portofolio. Code by me and design by my wife. Take a look at her profile.",
     tech: "Vue.js, Vuetify",
     published: true,
     image: pruSmall,
@@ -177,7 +177,7 @@ const hobbyProjects = [
   {
     title: "Tiny productions photography",
     description:
-      "Made a web page for a friend. A webpage dedicated to art and portraits. Now being updated by the recipent",
+      "Made a web page for a friend. A webpage dedicated to art and portraits. Now being updated by the recipent. I hope her buissness is doing well.",
     tech: "HTML and CSS",
     published: true,
     image: tinyImage,
@@ -187,7 +187,7 @@ const hobbyProjects = [
   {
     title: "Portofolio",
     description:
-      "I'm creating a personal portfolio using Vuetify 3. It's been a fun hobby project where I've learned to work with Vuetify.",
+      "I'm creating a personal portfolio using Vuetify 3. It's been a fun hobby project where I've learned to work with Vuetify. You are looking at it now!",
     tech: "Vue.js",
     published: false,
     image: portoImage,
@@ -197,7 +197,7 @@ const hobbyProjects = [
   {
     title: "Astronomy picture of the day",
     description:
-      "Made with API from NASA to show new pictures everyday of the universe. I would also like to add the mars rover api in the future",
+      "Made with API from NASA to show new pictures everyday of the universe. I would also like to add the mars rover api in the future.",
     tech: "React.Js",
     published: false,
     image: universe,
