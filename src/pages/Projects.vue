@@ -147,7 +147,8 @@ const hobbyProjects = [
   },
   {
     title: "Space explorer",
-    description: "Explore space with me in this new project using NASA apis.",
+    description:
+      "Explore space with me in this new project using NASA apis. Check out astronomy picture of the day or near earth objects and more in the future",
     tech: "Next.js, React and charts.js",
     published: true,
     image: neo,
