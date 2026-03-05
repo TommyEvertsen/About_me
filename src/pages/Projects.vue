@@ -110,6 +110,8 @@ import warehouse from "@/assets/images/projects/warehouse.jpg";
 import pruSmall from "@/assets/images/projects/pruSmall.jpg";
 import videogameLibrary from "@/assets/images/projects/videogameLibrary.jpg";
 import travelmap from "@/assets/images/projects/travelmap.jpg";
+import apod from "@/assets/images/projects/apod.jpg";
+import neo from "@/assets/images/projects/neo.jpg";
 import { spacemode } from "@/stores/spacemode";
 
 const hobbyProjects = [
@@ -142,6 +144,15 @@ const hobbyProjects = [
     image: travelmap,
     link: "https://travel-map-pink-zeta.vercel.app/",
     code: "https://github.com/TommyEvertsen/travel_map",
+  },
+  {
+    title: "Space explorer",
+    description: "Explore space with me in this new project using NASA apis.",
+    tech: "Next.js, React and charts.js",
+    published: true,
+    image: neo,
+    link: "https://space-explorer-three.vercel.app/",
+    code: "https://github.com/TommyEvertsen/space-explorer",
   },
   {
     title: "Tommy's lagersytem",
