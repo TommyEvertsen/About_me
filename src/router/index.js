@@ -9,7 +9,6 @@ import VideoGames from "@/pages/VideoGames.vue";
 import Blog from "@/pages/Blog.vue";
 import { createRouter, createWebHistory } from "vue-router";
 import Achievements from "@/pages/Achievements.vue";
-import NewHome from "@/pages/NewHome.vue";
 import WorkExperience from "@/pages/WorkExperience.vue";
 
 const router = createRouter({
