@@ -15,9 +15,9 @@ import WorkExperience from "@/pages/WorkExperience.vue";
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
 
-  history: createWebHistory(
-    process.env.NODE_ENV === "production" ? "/About_me/" : "/"
-  ),
+  // history: createWebHistory(
+  //   process.env.NODE_ENV === "production" ? "/About_me/" : "/"
+  // ),
   routes: [
     {
       path: "/",
