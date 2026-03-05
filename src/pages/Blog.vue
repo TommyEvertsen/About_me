@@ -74,7 +74,7 @@ import { ref, computed, watch } from "vue";
 import creative from "@/assets/images/blogImages/creative.jpg";
 import programming from "@/assets/images/blogImages/programming.jpg";
 import porks from "@/assets/images/blogImages/porks.jpg";
-import wife from "@/assets/images/blogImages/wife.JPG";
+import wife from "@/assets/images/blogImages/wife.jpg";
 import { spacemode } from "@/stores/spacemode";
 
 const blogPosts = [
