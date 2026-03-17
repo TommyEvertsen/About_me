@@ -1,6 +1,9 @@
+Publish for github pages
 git pull i main
 
 uncomment this line in vite.config   /*  base: "/About_me/", */
+comment this line in index.js      history: createWebHistory(import.meta.env.BASE_URL),
+uncomment this line in index.js // history: createWebHistory( //   process.env.NODE_ENV === "production" ? "/About_me/" : "/" // ),
 npm run build
 copy index.html and make 404.html exactly the same
 git add 
