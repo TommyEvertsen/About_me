@@ -6,20 +6,6 @@
 
     <v-app-bar-title>{{ $route.meta.title || "Home" }} </v-app-bar-title>
 
-    <div class="newAdress">
-      <p>
-        This website has been relocated. Please visit my
-        <a
-          href="https://about-me-five-beta.vercel.app/"
-          :style="{
-            color: $vuetify.theme.current.colors.secondaryText,
-          }"
-          >updated site</a
-        >
-        for the latest content.
-      </p>
-    </div>
-
     <v-spacer></v-spacer>
 
     <v-switch
@@ -349,10 +335,6 @@ const otherLinks = [
 
 .switch {
   margin-right: 10px;
-}
-
-.newAdress {
-  font-size: small;
 }
 
 @media (max-width: 600px) {
