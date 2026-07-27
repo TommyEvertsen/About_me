@@ -113,6 +113,7 @@ import travelmap from "@/assets/images/projects/travelmap.jpg";
 import apod from "@/assets/images/projects/apod.jpg";
 import neo from "@/assets/images/projects/neo.jpg";
 import { spacemode } from "@/stores/spacemode";
+import draw from "@/assets/images/projects/luckydraw.jpg";
 
 const hobbyProjects = [
   {
@@ -154,6 +155,16 @@ const hobbyProjects = [
     image: neo,
     link: "https://space-explorer-three.vercel.app/",
     code: "https://github.com/TommyEvertsen/space-explorer",
+  },
+  {
+    title: "Lucky draw",
+    description:
+      "A fun little app made for personal use. Cannot decide wich restaurant to eat at? Let the app decide randomly for you",
+    tech: "Next.js and React ",
+    published: true,
+    image: draw,
+    link: "https://draw-eight-gamma.vercel.app/",
+    code: "https://github.com/TommyEvertsen/Draw",
   },
   {
     title: "Tommy's lagersytem",
