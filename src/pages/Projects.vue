@@ -110,10 +110,9 @@ import warehouse from "@/assets/images/projects/warehouse.jpg";
 import pruSmall from "@/assets/images/projects/pruSmall.jpg";
 import videogameLibrary from "@/assets/images/projects/videogameLibrary.jpg";
 import travelmap from "@/assets/images/projects/travelmap.jpg";
-import apod from "@/assets/images/projects/apod.jpg";
 import neo from "@/assets/images/projects/neo.jpg";
 import { spacemode } from "@/stores/spacemode";
-import draw from "@/assets/images/projects/luckydraw.jpg";
+import draw from "@/assets/images/projects/draw-2.jpg";
 
 const hobbyProjects = [
   {
